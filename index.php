@@ -102,7 +102,8 @@ foreach($categories as $key=>$sortedAlbums){?>
 
     <?php } ?>
     
-  </div><!-- Grid close-->
+  </div> 
+  <!-- Grid close-->
 
   <?php
   $first = false;
