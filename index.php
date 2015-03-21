@@ -74,7 +74,7 @@ $first = true;
 
 foreach($categories as $key=>$sortedAlbums){?>
 
-    <!-- Grid open-->
+    <!-- Grid open -->
     <div id="grid-<?php echo $key;?>" class="grid <?php if($first){ echo "active";}?>"><?php
 
     foreach($sortedAlbums as $album){?>
