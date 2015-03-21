@@ -12,7 +12,6 @@
     $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
     GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);//*/
 
-
     //lets do magic
     $categories = array();
     foreach($albums as $album){
