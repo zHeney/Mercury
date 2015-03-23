@@ -6,12 +6,12 @@
     $userId = "118008128849823559907";
     
     // here are my changes
-    $albums = GooglePublicAPI::getAlbums($userId,true);
+     // $albums = GooglePublicAPI::getAlbums($userId,true);
 
-    /*
+  
     $albums = GooglePublicAPI::getAlbums($userId);    
     $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
-    GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);//*/
+    GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
 
     //lets do magic
     $categories = array();
@@ -36,9 +36,11 @@
     <title>Mercury</title>
 
     <link rel="stylesheet" href="main.css" type="text/css" >
+    <link rel="stylesheet" href="jquery.jMosaic.css"/>
     <link async href="http://fonts.googleapis.com/css?family=Griffy" rel="stylesheet" type="text/css"/>
    
     <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery.jMosaic.js"></script>
     <script src="js/main.js"></script>
  
   </head>
@@ -75,12 +77,12 @@ $first = true;
 foreach($categories as $key=>$sortedAlbums){?>
 
     <!-- Grid open -->
-    <div id="grid-<?php echo $key;?>" class="grid <?php if($first){ echo "active";}?>"><?php
+    <div id="grid-<?php echo $key;?>" class="jMosaic-item grid <?php if($first){ echo "active";}?>"><?php
 
     foreach($sortedAlbums as $album){?>
 
       <!--Open album name -->
-      <div><?php echo $album->getTitle();?></div>
+      <div class="albumName"><?php echo $album->getTitle();?></div>
       <!--Close album name -->
       
       <?php foreach($album->getPhotos() as $photo){ ?>
