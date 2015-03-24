@@ -36,11 +36,9 @@
     <title>Mercury</title>
 
     <link rel="stylesheet" href="main.css" type="text/css" >
-    <link rel="stylesheet" href="jquery.jMosaic.css"/>
     <link async href="http://fonts.googleapis.com/css?family=Griffy" rel="stylesheet" type="text/css"/>
    
     <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/jquery.jMosaic.js"></script>
     <script src="js/main.js"></script>
  
   </head>
@@ -77,7 +75,7 @@ $first = true;
 foreach($categories as $key=>$sortedAlbums){?>
 
     <!-- Grid open -->
-    <div id="grid-<?php echo $key;?>" class="jMosaic-item grid <?php if($first){ echo "active";}?>"><?php
+    <div id="grid-<?php echo $key;?>" class="grid <?php if($first){ echo "active";}?>"><?php
 
     foreach($sortedAlbums as $album){?>
 
@@ -88,10 +86,12 @@ foreach($categories as $key=>$sortedAlbums){?>
       <?php foreach($album->getPhotos() as $photo){ ?>
           
           <!-- Photo open-->
-          <div class="item">
-              <img src="<?php echo $photo->getSrc();?>">
-              <div class="hoverGrid"></div>
-              <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>
+          <div id="albumBlock">
+            <div class="item">
+                <img src="<?php echo $photo->getSrc();?>">
+                <div class="hoverGrid"></div>
+                <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>
+            </div>
           </div>
           <!-- Photo close-->
 
