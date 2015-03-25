@@ -35,7 +35,7 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 
 #leftMenu{
-	background: #301d12; 
+	background: #271703;
 	position: fixed; z-index: 999; 
 	height: 100%; width:281px; 
 	
@@ -53,10 +53,10 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 #arch {background-image: url(pict/arch.png);   
 	background-repeat: no-repeat;
-	width: 270px; height: 450px;
+	width: 270px; height: 678px;
 	position: absolute;
-	top: -93px; left:5px;
-	z-index: 1px;
+	top: -254px; left:5px;
+
 }
 
 #info-area {top: -12px; position: relative;}
@@ -66,6 +66,7 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 .menu a{
 	background-color: rgb(102, 64, 16);
+	text-shadow: 3px 1px 1px rgba(48, 29, 18, 1);
 	position: relative;
     color: #ffffff;
     opacity: 1;
@@ -112,26 +113,31 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 /*.............................................GRID.....................................*/
 
 #content {position: relative; height: 100%;margin-left:281px;}
-.grid{display:none; }
+.grid{display:none; background: rgba(18, 9, 5, 0.54); border-bottom: 12px solid rgba(33, 21, 12, 0.97);}
 .active.grid{display:block;}
 .albumName{
-	background: rgba(53, 27, 12, 0.61); 
+	background: rgba(179, 93, 8, 0.77);
 	position: relative;
-	height: 30px; width:100%; 
+	display: table-caption;
+ 	margin-left: 0px;
+ 	margin-bottom: 2px;
+	height: 35px; width:100%;
+	padding-left: 25px; 
 
 	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
-	color: white;
+	color: rgb(229, 201, 183);
 	
-	-webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
-	-moz-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
-	box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);}
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(226, 117, 10, 0.46);
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(226, 117, 10, 0.46);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(226, 117, 10, 0.46);
+}
 
 .absolute{position:absolute;top:0px;left:0px;width:100%;}
 
 .item:hover .hoverGrid{
-	background: rgba(0, 0, 0, 0.15);
+	background: rgba(255, 255, 255, 0.1);
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -140,7 +146,8 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	left: 0;
 	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
 }
-.item {float:left; position: relative; 
+.item {float:left; position: relative; margin-bottom: 25px; margin-left: 25px;
+	  border-top: 4px solid rgba(27, 24, 21, 1); border-radius: 6px;
 }
 /*.............................................ROUNDSHAPE.....................................*/
 /*
@@ -167,42 +174,54 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 }*/
 /*.............................................TITLE.....................................*/
 
-.item .title{
-	bottom:0%;
+/*.item .title{
+	bottom:-1%;
 	width: 100%;
 	position: absolute;
+	z-index: 1;
 	text-align: center;
 	color: #FFFFFF;
 	opacity: 0;
- 	transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+ 	transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);*/
  
  /*.......FONT.........*/
 
-	font: normal 25px/normal "Griffy", Helvetica, sans-serif;
+	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
  }
 
 .active .item:hover .title{  
 	opacity: 1;
-	bottom:1%;
-	z-index: 99;
+	bottom:0%;
+	z-index: 10;
+	overflow: hidden;
 }
-.item img {display: block; max-height: 325px;}
+.item img {
+	display: block;
+	max-height: 325px;
+  	border-radius: 7px;
+}
 
 .itemLink{
 
 	position: relative;
-	opacity:0.8;
-    color: #ffffff;
+	margin-right: 0px;
+	height: 40px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(18, 11, 0, 1);
+	border-radius: 5px;
+	opacity:1;
+    color: #B37509;
     text-decoration: none;
     display: block;
+    z-index: 10;
 
 	text-align: center;
 
-	background: -webkit-linear-gradient(-90deg, rgba(102, 64, 16, 1) 0, rgba(102, 64, 16, 0.3) 100%);
-	background: -moz-linear-gradient(180deg, rgba(102, 64, 16, 1) 0, rgba(102, 64, 16, 0.3) 100%);
-	background: linear-gradient(180deg, rgba(102, 64, 16, 1) 0, rgba(102, 64, 16, 0.3) 100%);
+	background: -webkit-linear-gradient(-90deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
+	background: -moz-linear-gradient(180deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
+	background: linear-gradient(180deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
 	
 	-webkit-transform: translate(0, 0);
 	-moz-transform: translate(0, 0);
@@ -216,16 +235,20 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 	-webkit-box-shadow: 0 0 5px #000000;
  
-	height:56px;
 	cursor:pointer;
 	overflow:hidden;
 }
 .itemLink:active{
-	opacity:0.9;
+	opacity:0.95;
+    z-index: 10;
 
    -webkit-transform: translate(0, 3px);
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
 }
 
-.menu .activeElement{}
+.menu .activeElement{
+	background: -webkit-linear-gradient(-90deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
+	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
+	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
+}

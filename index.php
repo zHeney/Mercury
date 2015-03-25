@@ -6,12 +6,12 @@
     $userId = "118008128849823559907";
     
     // here are my changes
-     // $albums = GooglePublicAPI::getAlbums($userId,true);
+     $albums = GooglePublicAPI::getAlbums($userId,true);
 
   
-    $albums = GooglePublicAPI::getAlbums($userId);    
-    $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
-    GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
+     //$albums = GooglePublicAPI::getAlbums($userId);    
+    // $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
+    // GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
 
     //lets do magic
     $categories = array();
@@ -86,22 +86,16 @@ foreach($categories as $key=>$sortedAlbums){?>
       <?php foreach($album->getPhotos() as $photo){ ?>
           
           <!-- Photo open-->
-          <div id="albumBlock">
             <div class="item">
                 <img src="<?php echo $photo->getSrc();?>">
                 <div class="hoverGrid"></div>
                 <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>
             </div>
-          </div>
           <!-- Photo close-->
 
       <?php } ?>
       <div class="clear"> </div>
       
-      <!-- Gallery separetor open-->
-      <!-- <hr/>-->
-      <!-- Gallery separetor close-->
-
     <?php } ?>
     
   </div> 
