@@ -6,12 +6,12 @@
     $userId = "118008128849823559907";
     
     // here are my changes
-     $albums = GooglePublicAPI::getAlbums($userId,true);
+     //$albums = GooglePublicAPI::getAlbums($userId,true);
 
   
-     //$albums = GooglePublicAPI::getAlbums($userId);    
-    // $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
-    // GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
+     $albums = GooglePublicAPI::getAlbums($userId);    
+     $latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
+     GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
 
     //lets do magic
     $categories = array();
@@ -53,16 +53,20 @@
   </div> 
 <!--.............................................LEFT-MENU.....................................-->  
   <div id="leftMenu">
-    
-    <div animationFrom="right" id="logo-area"></div>
+    <!-- Logo -->
+    <div id="logo-area"></div>
+    <!-- Menu -->
     <div id="info-area">
 
-        <?php foreach($categories as $key=>$sortedAlbums){ ?>
-            <div class="menu"><a targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href="#"><?php echo $key;?></a></div>
-        <?php } ?>
+      <?php foreach($categories as $key=>$sortedAlbums){ ?>
+        <div class="menu"><a targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href="#"><?php echo $key;?></a></div>
+      <?php } ?>
+
+      <div class="menu"><a  href="#">Bottles</a></div>
       
       <div class="menu2"><a href="#" class="Facebook"></a></div>
     </div>
+    
     <div id="arch"></div>
   </div>
 <!--..............................................CONTENT......................................--> 
@@ -80,17 +84,20 @@ foreach($categories as $key=>$sortedAlbums){?>
     foreach($sortedAlbums as $album){?>
 
       <!--Open album name -->
-      <div class="albumName"><?php echo $album->getTitle();?></div>
+      <div class="albumNameComtainer">
+        <div class="albumName"><?php echo $album->getTitle();?></div>
+      </div>
       <!--Close album name -->
       
       <?php foreach($album->getPhotos() as $photo){ ?>
           
           <!-- Photo open-->
-            <div class="item">
+
+          <div class="item">         
                 <img src="<?php echo $photo->getSrc();?>">
                 <div class="hoverGrid"></div>
-                <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>
-            </div>
+               <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>-->
+          </div> 
           <!-- Photo close-->
 
       <?php } ?>

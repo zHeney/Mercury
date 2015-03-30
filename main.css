@@ -53,6 +53,7 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 #arch {background-image: url(pict/arch.png);   
 	background-repeat: no-repeat;
+	opacity: 0.6;
 	width: 270px; height: 678px;
 	position: absolute;
 	top: -254px; left:5px;
@@ -114,7 +115,20 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 #content {position: relative; height: 100%;margin-left:281px;}
 .grid{display:none; background: rgba(18, 9, 5, 0.54); border-bottom: 12px solid rgba(33, 21, 12, 0.97);}
-.active.grid{display:block;}
+.active.grid{
+	display:block;	  
+
+
+    -webkit-column-width: 350px; /* Chrome, Safari, Opera */
+    -moz-column-width: 350px; /* Firefox */
+    column-width: 350px;
+
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+
+}
+
 .albumName{
 	background: rgba(179, 93, 8, 0.77);
 	position: relative;
@@ -136,6 +150,8 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 .absolute{position:absolute;top:0px;left:0px;width:100%;}
 
+/*.............................................ITEM.....................................*/
+
 .item:hover .hoverGrid{
 	background: rgba(255, 255, 255, 0.1);
 	width: 100%;
@@ -146,8 +162,11 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	left: 0;
 	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
 }
-.item {float:left; position: relative; margin-bottom: 25px; margin-left: 25px;
-	  border-top: 4px solid rgba(27, 24, 21, 1); border-radius: 6px;
+.item {position: relative; margin-bottom: 10px;
+	  border-top: 4px solid rgba(27, 24, 21, 1); 
+  	  border-left: 4px solid rgba(37, 25, 13, 1);
+ 	  border-right: 4px solid rgba(42, 25, 8, 1);
+	  border-radius: 6px;
 }
 /*.............................................ROUNDSHAPE.....................................*/
 /*
@@ -186,10 +205,10 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
  
  /*.......FONT.........*/
 
-	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
+/*  font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
- }
+ }*/
 
 .active .item:hover .title{  
 	opacity: 1;
@@ -199,7 +218,7 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 }
 .item img {
 	display: block;
-	max-height: 325px;
+ 	width: 100%;
   	border-radius: 7px;
 }
 

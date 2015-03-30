@@ -12,7 +12,7 @@ var screenHelper = {
 		}
 	},
 	runMobileMode: function (){
-		if($(window).height() / $(window).width() < 1.5){
+		if($(window).height() / $(window).width() < 1){
 			$("body").addClass("landscape");
 		}else{
 			$("body").removeClass("landscape");
