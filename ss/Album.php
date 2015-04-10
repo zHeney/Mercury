@@ -1,6 +1,6 @@
 <?php
 
-namespace kosh\GooglePublicAPI;
+namespace mercury\GooglePublicAPI;
 
 
 class Album{

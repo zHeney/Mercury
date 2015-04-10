@@ -1,5 +1,5 @@
 <?php
-namespace kosh\GooglePublicAPI;
+namespace mercury\GooglePublicAPI;
 
 class Photo{
     private $albumId;

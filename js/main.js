@@ -1,3 +1,7 @@
+// read more https://developers.google.com/picasa-web/docs/2.0/reference#Parameters
+// possible values 94, 110, 128, 200, 220, 288, 320, 400, 512, 576, 640, 720, 800, 912, 1024, 1152, 1280, 1440, 1600
+var BIG_IMGMAX = 1024;
+
 var screenHelper = {
 	mobileCssPath: 'mobile.css',
 	uniqueMobileCSSID: 'qwerweqrqwefasdfwerfsarts',
@@ -69,8 +73,30 @@ $(function(){
 
 });
 
+  $(document).ready(function () {
+    $(".makeMeScrollable").smoothDivScroll({
+      hotSpotScrolling: false,
+      touchScrolling: true,
+      manualContinuousScrolling: false,
+      mousewheelScrolling: false
+    });
+
+	$("[imagegroup]").each(function(){
+		var groupClass = "." + $(this).attr("imagegroup");
+		$(groupClass).each(function(){
+			var src = $(this).attr("src");
+			if(src){
+				var newSrc = src.replace(/(.*\/s)([0-9]+)(.*)/,'$1' + BIG_IMGMAX + '$3');
+				$(this).attr("href",newSrc);
+			}
+		});
+		$(groupClass).colorbox({rel:groupClass});
+	});
+
+	$(".bottles1").each(function(){$(this).attr("href",$(this).attr("src"));});
+    $(".bottles1").colorbox({rel:".bottles1"});
 
 
 
 
-
+});

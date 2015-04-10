@@ -114,8 +114,10 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 /*.............................................GRID.....................................*/
 
 #content {position: relative; height: 100%;margin-left:281px;}
-.grid{display:none; background: rgba(18, 9, 5, 0.54); border-bottom: 12px solid rgba(33, 21, 12, 0.97);}
-.active.grid{
+
+.grid{display:none;}
+.gridWall{display:none; background: rgba(18, 9, 5, 0.54); border-bottom: 12px solid rgba(33, 21, 12, 0.97);}
+.active.gridWall{
 	display:block;	  
 
 
@@ -126,9 +128,13 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
     -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
     -moz-column-gap: 10px; /* Firefox */
     column-gap: 10px;
-
 }
 
+.active.grid{
+	display:block;	  
+}
+
+.albumNameComtainer{width: 100%;}
 .albumName{
 	background: rgba(179, 93, 8, 0.77);
 	position: relative;
@@ -148,8 +154,6 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(226, 117, 10, 0.46);
 }
 
-.absolute{position:absolute;top:0px;left:0px;width:100%;}
-
 /*.............................................ITEM.....................................*/
 
 .item:hover .hoverGrid{
@@ -162,12 +166,19 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	left: 0;
 	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
 }
+.itemWall {position: relative; margin-bottom: 10px;
+	  border-top: 4px solid rgba(27, 24, 21, 1); 
+  	  border-left: 4px solid rgba(37, 25, 13, 1);
+ 	  border-right: 4px solid rgba(42, 25, 8, 1);
+	  border-radius: 6px;
+}
 .item {position: relative; margin-bottom: 10px;
 	  border-top: 4px solid rgba(27, 24, 21, 1); 
   	  border-left: 4px solid rgba(37, 25, 13, 1);
  	  border-right: 4px solid rgba(42, 25, 8, 1);
 	  border-radius: 6px;
 }
+
 /*.............................................ROUNDSHAPE.....................................*/
 /*
 .roundShape{
@@ -270,4 +281,40 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	background: -webkit-linear-gradient(-90deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
+}
+
+.makeMeScrollable
+{
+	width:100%;
+	height: 400px;
+	position: relative;
+	background: rgba(18, 9, 5, 0.54);
+	border-top: 2px solid rgba(39, 23, 3, 0.75);
+	
+
+}
+
+.makeMeScrollable div.scrollableArea div{
+	padding: 0 5px;
+	display: table-cell;
+}
+
+.makeMeScrollable div.scrollableArea div img
+{
+	
+	margin: 0;
+	padding: 0;
+	max-height: 400px;
+
+
+	-webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+
+	
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
