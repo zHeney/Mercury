@@ -14,7 +14,7 @@ class GooglePublicAPI{
     const KEY_IMGMAX = "{imgmax}";
     // read more https://developers.google.com/picasa-web/docs/2.0/reference#Parameters
     // possible values 94, 110, 128, 200, 220, 288, 320, 400, 512, 576, 640, 720, 800, 912, 1024, 1152, 1280, 1440, 1600
-    const DEFAULT_IMGMAX = "512";
+    const DEFAULT_IMGMAX = "640";
 
     const API_ENDPOINT_GET_ALBUMS = "https://picasaweb.google.com/data/feed/api/user/{userid}?alt=json";
     const API_ENDPOINT_GET_LATEST = "https://picasaweb.google.com/data/feed/api/user/{userid}?kind=photo&max-results={total}&alt=json&imgmax={imgmax}";

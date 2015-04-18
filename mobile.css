@@ -1,35 +1,38 @@
-
-#topMenu{display:block;
-width: 100%; background: #301d12; z-index: 1;
-		-webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
-  	    -moz-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
-        box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);}
 #leftMenu{display:none;}
+
+#topMenu{
+	display:block;
+	width: 100%; background: #301d12; z-index: 1;
+	webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
+  	-moz-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
+    box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);}
+
 #content{margin-left:0px;}
 
-.active.grid{
-	display:block;	  
-}
+.active.grid{display:block;}
 
-.item{width:100%;}
+.item{max-width:100%;}
 .item .title{display: block;}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.landscape .item{
-	width:50%;
+.landscape .column-style {
+	 -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 5px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 5px; /* Firefox */
+    column-gap: 5px;
+    -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+    -moz-column-width: 100px; /* Firefox */
+    column-width: 100px;
 }
+
+.makeMeScrollable {height: auto;overflow-y:scroll;}
+.makeMeScrollable img{height: 400px;}
+.landscape .makeMeScrollable img{height: 200px;}
+
+
+.barefaced{display:inline-flex;}
+.barefaced div{float:left;margin:5px;}
