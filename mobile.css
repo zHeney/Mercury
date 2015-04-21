@@ -18,7 +18,7 @@
 
 
 .landscape .column-style {
-	 -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
     -webkit-column-gap: 5px; /* Chrome, Safari, Opera */
@@ -34,5 +34,6 @@
 .landscape .makeMeScrollable img{height: 200px;}
 
 
-.barefaced{display:inline-flex;}
-.barefaced div{float:left;margin:5px;}
+.barefaced{display:block;}
+.barefaced div{float:left;padding:0px;}
+.barefaced div img{margin:5px;}
