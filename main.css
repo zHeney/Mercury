@@ -1,29 +1,29 @@
 /*.......FONT.........*/
 @font-face{ 
-  font-family: 'kids';
-  src: url('font/pfkidspro.eot');
-  src: url('font/PFKidsPro.ttf'),
-       url('font/pfkidspro.woff') format('woff');
+	font-family: 'kids';
+	src: url('font/pfkidspro.eot');
+	src: url('font/PFKidsPro.ttf'),
+   		 url('font/pfkidspro.woff') format('woff');
 }
 
 *{
-  margin:0px;
-  padding:0px;
+ 	margin:0px;
+ 	padding:0px;
 }
 
-a {
-  text-decoration: none;
-}
+a {text-decoration: none;}
   
 html, body{
-  position: relative;
-}
-body{
-	overflow-y: scroll;
+	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
+	position: relative;
 }
 
-body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
-  line-height: 30px; font-family:'kids',sans-serif; font-size: 28px;
+body {
+ 	background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
+ 	line-height: 30px; 
+ 	font-family:'kids',sans-serif; 
+ 	font-size: 28px;
+ 	-webkit-font-smoothing: antialiased;
 }
 .clear {clear: both;}
 
@@ -149,6 +149,10 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background-color: #783D05;
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+
 }
 
 /*.............................................GRID.....................................*/
@@ -160,12 +164,16 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 .active.gridWall{display:block;}
 
 .column-style{
-	-webkit-column-width: 350px; /* Chrome, Safari, Opera */
-    -moz-column-width: 350px; /* Firefox */
-    column-width: 350px;
+	-webkit-column-count: 3;
+    -moz-column-count: 3; 
+    column-count: 3;
+	-webkit-column-width: 250px; /* Chrome, Safari, Opera */
+    -moz-column-width: 250px; /* Firefox */
+    column-width: 250px;
     -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
     -moz-column-gap: 10px; /* Firefox */
     column-gap: 10px;
+    
 }
 
 .active.grid{display:block;}
@@ -175,17 +183,46 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	background: rgba(81, 81, 81, 0.65);
 	position: relative; 	
 	height: 23px; width:100%;
-	text-align: center; 
+
 	
 	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
-	color: rgb(116, 213, 255);
+
 	
 	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	z-index: 1;
+}
+.topicText{
+	color: rgb(116, 213, 255);
+	opacity: 0.6;
+	text-align: center;
+	transition: 1s;
+
+	animation-name: topicText; 
+    animation-duration: 1.5s; 
+    animation-iteration-count: 6;
+	animation-delay: 1s;
+
+
+	-webkit-animation-name: topicText; 
+    -webkit-animation-duration: 1.5s; 
+    -webkit-animation-iteration-count: 6;
+    -webkit-animation-delay: 1s;
+
+}
+
+@-webkit-keyframes topicText {
+    0%   {opacity: 0.6;}
+    50%  {opacity: 1;}
+    100% {opacity: 0.6;}
+}
+@keyframes topicText {
+    0%   {opacity: 0.6;}
+    50%  {opacity: 1;}
+    100% {opacity: 0.6;}
 }
 
 .albumName{
@@ -209,27 +246,26 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 
 .item {
 	position: relative; 
-	margin-bottom: 10px;
-
-	/*border-top: 4px solid rgba(27, 24, 21, 1);*/
-	border-radius: 6px;
-	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+	margin-bottom: 10px;	
 }
 
 .item img {
 	display: block;
  	width: 100%;
-  	border-radius: 7px;
+  	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
   	transition: .8s;
+  	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
 }
 .item img:hover {
+	cursor: pointer;
+
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 
 	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
 
-	-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;
+	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
 }
 
 .item:hover .hoverGrid{
@@ -243,7 +279,49 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
 	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
 }
 
-/*.............................................ROUNDSHAPE.....................................*/
+
+/*.............................................HorizontalGallery.....................................*/
+
+.makeMeScrollable{
+	width: 100%;
+	height: 400px;
+	position: relative;
+	background: rgba(14, 4, 0, 0.43);
+ 	/*border-top: 8px solid rgba(39, 23, 3, 1);*/
+	/*border-bottom: 5px dashed rgba(173, 129, 83, .6);*/
+	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+}
+
+.makeMeScrollable div.scrollableArea div{
+	
+	display: table-cell;
+}
+
+.barefaced div{padding: 0px; margin: 0px;}
+
+.makeMeScrollable div.scrollableArea div img{
+	transition: .8s;
+	margin-right: 7px;
+	padding: 0;
+	max-height: 400px;
+
+	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+
+	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+}
+.makeMeScrollable div.scrollableArea div img:hover {
+	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
+	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
+	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
+
+	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
+
+	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
+
+    box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+ }
+
+ /*.............................................ROUNDSHAPE.....................................*/
 /*
 .roundShape{
 	bottom: 10%;
@@ -336,50 +414,4 @@ body {background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP
    -webkit-transform: translate(0, 3px);
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
-}
-
-/*.............................................HorizontalGallery.....................................*/
-
-.makeMeScrollable{
-	width: 100%;
-	height: 400px;
-	position: relative;
-	background: rgba(14, 4, 0, 0.43);
- 	/*border-top: 8px solid rgba(39, 23, 3, 1);*/
- 	/*border-bottom: 8px dotted rgba(149, 14, 1, 1);*/
-	/*background-image:url(https://lh4.googleusercontent.com/-7rBVFEiSSG4/VSwby1Bj19I/AAAAAAAAA5g/cBVVInffwEA/w300-h718-no/roof_3.jpg);*/
-}
-
-.makeMeScrollable div.scrollableArea div{
-	
-	display: table-cell;
-}
-
-.barefaced div{
-	padding: 0 5px;
-}
-
-.makeMeScrollable div.scrollableArea div img{
-	transition: .8s;
-	margin: 0;
-	padding: 0;
-	max-height: 400px;
-
-	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
-
-	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
-
-	 box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
-}
-.makeMeScrollable div.scrollableArea div img:hover {
-	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
-	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
-	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
-
-	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
-
-	-webkit-border-radius: 40px; -moz-border-radius: 40px; border-radius: 40px;
-
-    box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
- 
 } 

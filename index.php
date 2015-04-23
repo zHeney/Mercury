@@ -89,7 +89,7 @@ foreach($categories as $key=>$sortedAlbums){?>
     <!-- Grid open -->
     <div id="grid-<?php echo $key;?>" imagegroup="group<?php echo $key; ?>" class="gridWall grid <?php if($first){ echo "active";}?>">
 
-      <div class="albumName">Magic vessel</div>
+      <div class="albumName">Wall</div>
 
       <div class="column-style"><!-- items are here -->
 
@@ -113,7 +113,7 @@ foreach($categories as $key=>$sortedAlbums){?>
               <!-- Photo close-->
 
           <?php } ?>
-          <div class="clear"> </div>
+         <!-- <div class="clear"> </div> -->
           
         <?php } ?>
       </div>
@@ -127,7 +127,7 @@ foreach($categories as $key=>$sortedAlbums){?>
 <!-- .......................................................BOTTLES....................................................... -->
 
 <div id="gridBottles" class="grid" style="display: none;">
-  <div class="topic"><----------------------------- Touch to scroll -----------------------------></div>
+  <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
 
    <!-- Bottle-darkRed-->
   <div class="albumName">Magic vessel</div>
@@ -194,7 +194,7 @@ foreach($categories as $key=>$sortedAlbums){?>
 <!-- .......................................................FRAMES....................................................... -->
 
 <div id="gridFrames" class="grid" style="display: none;">
-  <div class="topic"><----------------------------- Touch to scroll -----------------------------></div>
+  <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
 
   <div class="albumName">Photo frames</div>   
   <div class="makeMeScrollable">
@@ -208,8 +208,9 @@ foreach($categories as $key=>$sortedAlbums){?>
       <div class="clearfix"></div>
     </div>
 
-    <div style="margin: -10px;height: 60px; width: 100%;background: rgba(14, 4, 0, 0.43);position: fixed;"></div>
+
   </div>
+  <div style="height: 50px;width: 100%; background: rgba(14, 4, 0, 0.43); position: absolute;"></div>
 </div>
 
 
