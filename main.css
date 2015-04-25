@@ -11,11 +11,18 @@
  	padding:0px;
 }
 
+button:focus{ outline: 0px;}
+
 a {text-decoration: none;}
   
 html, body{
 	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
 	position: relative;
+}
+
+.noScroll{
+	position: fixed;
+	overflow-y: scroll;
 }
 
 body {
@@ -25,6 +32,28 @@ body {
  	font-size: 28px;
  	-webkit-font-smoothing: antialiased;
 }
+
+#loading {position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; background-color: rgba(39, 23, 3, 0.93); z-index: 999;}
+#spinner {position: absolute;top:45%; right:100%; width: 50px;
+
+    -webkit-animation-name: spinner; 
+    -webkit-animation-duration: 8s; 
+    animation-name: spinner;
+    animation-duration: 8s;
+    -webkit-animation-timing-function: linear; 
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes spinner {
+    from {right:100%;}
+    to {right:-5%;}
+}
+@keyframes spinner {
+    from {right:100%;}
+    to {right:-5%;}
+}
+
 .clear {clear: both;}
 
 .absolute{position:absolute;top:0px;left:0px;width:100%;}
@@ -82,25 +111,33 @@ body {
  	background-repeat: no-repeat;
  	opacity: 1;
  	width: 280px;
- 	height: 678px;
+ 	height: 680px;
  	position: absolute;
- 	top: -383px;
+ 	top: -680px;
  	left: 2px;
 
  	-webkit-animation-name: arch; 
-    -webkit-animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1s; 
+    -webkit-animation-fill-mode: forwards;
       
     animation-name: arch; 
-    animation-duration: 1s; 
+    animation-duration: 1s;
+    animation-delay: 1s; 
 }
 @-webkit-keyframes arch {
-    from {top: -680px;}
-    to {top: -383px;}
+    from {top: -680px;visibility:visible;}
+    to {top: -347px;}
 }
 @keyframes arch {
-    from {top: -680px;}
-    to {top: -383px;}
+    from {top: -680px;visibility:visible;}
+    to {top: -347px;}
 }
+
+#arch:after {
+	animation-play-state:paused;
+	-webkit-animation-play-state:paused;}
+
 
 #info-area {position: relative;}
 
@@ -249,10 +286,11 @@ body {
 	margin-bottom: 10px;	
 }
 
+ .cboxPhoto, .item img {-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;}
+
 .item img {
 	display: block;
  	width: 100%;
-  	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
   	transition: .8s;
   	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
 }
@@ -288,7 +326,6 @@ body {
 	position: relative;
 	background: rgba(14, 4, 0, 0.43);
  	/*border-top: 8px solid rgba(39, 23, 3, 1);*/
-	/*border-bottom: 5px dashed rgba(173, 129, 83, .6);*/
 	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
 }
 
@@ -320,6 +357,8 @@ body {
 
     box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
  }
+ .footBorder {height: 50px;width: 100%; background: rgba(14, 4, 0, 0.43);}
+
 
  /*.............................................ROUNDSHAPE.....................................*/
 /*

@@ -3,7 +3,7 @@
 #topMenu{
 	display:block;
 	width: 100%; background: #301d12; z-index: 1;
-	webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
+	-webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
   	-moz-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
     box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);}
 
@@ -14,13 +14,26 @@
 /* .item{max-width:100%;}
 .item .title{display: block;}*/
 
-.item img {-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;}
+.item img:hover {
+
+	transition: -webkit-border-radius 0s;
+	transition: -moz-border-radius 0s; 
+	transition: border-radius 0s; 
+
+	-webkit-transition-delay: 0s; -moz-transition-delay: 0s; transition-delay: 0s;
+
+	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+}
 
 .column-style {
     -webkit-column-count: 1;
     -moz-column-count: 1; 
     column-count: 1;
+    -webkit-column-width: auto; 
+    -moz-column-width: auto; 
+    column-width: auto;
 }
+
 
 .landscape .column-style {
     -webkit-column-count: 2;
@@ -29,9 +42,9 @@
     -webkit-column-gap: 5px; 
     -moz-column-gap: 5px; 
     column-gap: 5px;
-    -webkit-column-width: 100px; 
-    -moz-column-width: 100px; 
-    column-width: 100px;
+    -webkit-column-width: auto; 
+    -moz-column-width: auto; 
+    column-width: auto;
 }
 
 .makeMeScrollable {height: auto;overflow-y:scroll;
@@ -40,9 +53,11 @@
 .landscape .makeMeScrollable img{height: 300px;}
 
 .barefaced{display:block;}
-.barefaced div{float:left;padding:0px;margin:0px;}
-.barefaced div img{
+.barefaced div{float:left;padding:0px;margin:0px; }
+.barefaced div img{vertical-align: bottom;
 	margin-right:7px;	
 	height: 400px;
 	-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
 }
+
+.footBorder{display: none;}

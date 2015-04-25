@@ -48,15 +48,19 @@
   </head>
 
 <!--..............................................BODY.....................................-->  
-<body>
+<body class="noScroll">
 
 <!--..............................................TOP-MENU.....................................-->  
   <div id="topMenu">
-    <?php foreach($categories as $key=>$sortedAlbums){ ?>
-        <div class="menu"><a targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href="#"><?php echo $key;?></a></div>
+    <?php 
+    $activeElement = true;
+    foreach($categories as $key=>$sortedAlbums){ ?>
+        <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href=""><?php echo $key;?></a></div>
     <?php } ?>
-    <div class="menu"><a targetGrid="#gridBottles" href="#">Bottles</a></div> 
-    <div class="menu"><a targetGrid="#gridFrames" href="#">Frames</a></div> 
+    <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div> 
+    <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
+    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div> 
+        
   </div> 
 <!--.............................................LEFT-MENU.....................................-->  
   <div id="leftMenu">
@@ -67,11 +71,12 @@
       <?php 
       $activeElement = true;
       foreach($categories as $key=>$sortedAlbums){ ?>
-        <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href="#"><?php echo $key;?></a></div>
+        <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href=""><?php echo $key;?></a></div>
       <?php $activeElement = false; } ?>
 
-    <div class="menu"><a targetGrid="#gridBottles" href="#">Bottles</a></div>
-    <div class="menu"><a targetGrid="#gridFrames" href="#">Frames</a></div> 
+    <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
+    <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div> 
+    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>    
       
     </div>
     
@@ -195,29 +200,55 @@ foreach($categories as $key=>$sortedAlbums){?>
 
 <div id="gridFrames" class="grid" style="display: none;">
   <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
-
   <div class="albumName">Photo frames</div>   
   <div class="makeMeScrollable">
     <div class="barefaced">
+      <div><img class="frames" src="https://lh6.googleusercontent.com/-iTcjj5MyWgI/VTjYr3UQPNI/AAAAAAAAASc/-z8e0ckB8xQ/h845-no/Frame8_Mercury.jpg"/></div> 
+      <div><img class="frames" src="https://lh5.googleusercontent.com/-FvFhBeCIKVg/VS693rrHi-I/AAAAAAAAARE/SZmej66-96g/h1024-no/Frame4_Mercury.jpg"/></div>      
+      <div><img class="frames" src="https://lh3.googleusercontent.com/-tVLhq2ps76I/VS694NUCrSI/AAAAAAAAARE/9Muhf19ee-s/h1024-no/Frame5_Mercury.jpg"/></div>           
       <div><img class="frames" src="https://lh5.googleusercontent.com/-KJN7ihRV1lE/VS69vdZWL-I/AAAAAAAAARE/3t9eEUI2fqA/h1024-no/Frame1_Mercury.jpg"/></div>        
       <div><img class="frames" src="https://lh4.googleusercontent.com/-mdI3u_ftthg/VS69wH0ybGI/AAAAAAAAARE/nZzlh_LMnv8/h1024-no/Frame2_Mercury.jpg"/></div>
-      <div><img class="frames" src="https://lh3.googleusercontent.com/-I1lKUdhnI2Y/VS69v6k_qaI/AAAAAAAAARE/ywAm0GwNcLI/h1024-no/Frame3_Mercury.jpg"/></div>        
-      <div><img class="frames" src="https://lh5.googleusercontent.com/-FvFhBeCIKVg/VS693rrHi-I/AAAAAAAAARE/SZmej66-96g/h1024-no/Frame4_Mercury.jpg"/></div> 
-      <div><img class="frames" src="https://lh3.googleusercontent.com/-tVLhq2ps76I/VS694NUCrSI/AAAAAAAAARE/9Muhf19ee-s/h1024-no/Frame5_Mercury.jpg"/></div> 
+      <div><img class="frames" src="https://lh3.googleusercontent.com/-I1lKUdhnI2Y/VS69v6k_qaI/AAAAAAAAARE/ywAm0GwNcLI/h1024-no/Frame3_Mercury.jpg"/></div>
       <div><img class="frames" src="https://lh6.googleusercontent.com/-8xMSM-0cKps/VS694wiBZvI/AAAAAAAAARE/0cvQHdJbcjY/h1024-no/Frame6_Mercury.jpg"/></div>
+     
       <div class="clearfix"></div>
     </div>
-
-
   </div>
-  <div style="height: 50px;width: 100%; background: rgba(14, 4, 0, 0.43); position: absolute;"></div>
+
+  <div class="albumName">Coffee-Flower Frame</div>   
+  <div class="makeMeScrollable">
+    <div class="barefaced">
+      <div><img class="frames" src="https://lh6.googleusercontent.com/-30rYRL5NZrs/VTjZ3FAU1LI/AAAAAAAAAS8/6JM5f2A-knA/w889-h845-no/CoffeeFlowerFrame1_Mercury.jpg"/></div>        
+      <div><img class="frames" src="https://lh6.googleusercontent.com/-dZFI17YbQhg/VTjZ2ez9HzI/AAAAAAAAAS4/AUqZaj43gpc/w1127-h845-no/CoffeeFlowerFrame2_Mercury.jpg"/></div>
+      <div><img class="frames" src="https://lh4.googleusercontent.com/-Ufj4D7ldsB4/VTjZ2DS6kBI/AAAAAAAAASw/yVSVHZvBA0Q/w1127-h845-no/CoffeeFlowerFrame3_Mercury.jpg"/></div>   
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="footBorder"></div>
 </div>
 
 
+
+<!-- .......................................................DIFFERENT....................................................... -->
+<div id="gridOther" class="grid" style="display: none;">
+  <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
+   <!-- Different -->
+  <div class="albumName">Other</div>
+  <div class="makeMeScrollable">
+    <div class="barefaced other">
+      <div><img src="https://lh6.googleusercontent.com/-30rYRL5NZrs/VTjZ3FAU1LI/AAAAAAAAAS8/6JM5f2A-knA/w889-h845-no/CoffeeFlowerFrame1_Mercury.jpg"/></div>        
+      <div><img src="https://lh6.googleusercontent.com/-dZFI17YbQhg/VTjZ2ez9HzI/AAAAAAAAAS4/AUqZaj43gpc/w1127-h845-no/CoffeeFlowerFrame2_Mercury.jpg"/></div>
+      <div><img src="https://lh4.googleusercontent.com/-Ufj4D7ldsB4/VTjZ2DS6kBI/AAAAAAAAASw/yVSVHZvBA0Q/w1127-h845-no/CoffeeFlowerFrame3_Mercury.jpg"/></div>   
+      <div class="clearfix"></div>
+    </div>
+  </div>
 </div>
 
 
-
+<div id="loading">
+  <div id="spinner"><img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif"></div>  
+</div>
 
   <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
   <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>

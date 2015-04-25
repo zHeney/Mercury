@@ -104,12 +104,24 @@ $(function(){
 			grid.show().addClass("active");
 			current.hide().removeClass("active");
 			clickIsProceeding = false;
-                        fixWidthOfBareFaced();
+            fixWidthOfBareFaced();
 		}
+		return false;
 	});
 
 
 	if(isMobile == false){
+		var colorBoxOptions = {
+			fixed:true,
+			height:"100%",
+			onOpen:function(){
+				$("body").addClass("noScroll");
+			},
+			onClosed:function(){
+				$("body").removeClass("noScroll");
+			}
+		};
+
 		$(".makeMeScrollable").smoothDivScroll({
 			hotSpotScrolling: false,
 	      	touchScrolling: true,
@@ -126,18 +138,30 @@ $(function(){
 					$(this).attr("href",newSrc);
 				}
 			});
-			$(groupClass).colorbox({rel:groupClass, height:"100%"});
+			colorBoxOptions.rel = groupClass;
+			$(groupClass).colorbox(colorBoxOptions);
 		});
 
 		$(".bottles").each(function(){$(this).attr("href",$(this).attr("src"));});
-	    $(".bottles").colorbox({rel:".bottles", height:"100%"});
+		colorBoxOptions.rel = ".bottles";
+	    $(".bottles").colorbox(colorBoxOptions);
 
 		$(".frames").each(function(){$(this).attr("href",$(this).attr("src"));});
-	    $(".frames").colorbox({rel:".frames", height:"100%"});
+		colorBoxOptions.rel = ".frames";
+	    $(".frames").colorbox(colorBoxOptions);
+
+	    $(".other").each(function(){$(this).attr("href",$(this).attr("src"));});
+	    colorBoxOptions.rel = ".other";
+	    $(".other").colorbox(colorBoxOptions);
 	}
         
         onAllPicturesLoad(function(){
             fixWidthOfBareFaced();
+            $("body").removeClass("noScroll");
+            $("#loading").hide();
         });
 
 });
+
+
+
