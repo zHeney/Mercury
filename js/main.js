@@ -8,7 +8,7 @@ function onAllPicturesLoad(callBack){
     $img = $("img");
     $img.one('load', function() {
         loaded++;
-        console.log("Loaded pictures " + loaded + " out of " + $img.length);
+       console.log("Loaded pictures " + loaded + " out of " + $img.length);
         
         if(loaded == $img.length){
             callBack();
@@ -86,6 +86,7 @@ $(function(){
 		}
 
 		clickIsProceeding = true;
+		$('body').scrollTop(0);
 
 		$(".activeElement").removeClass("activeElement");
 		$(this).addClass("activeElement");
@@ -111,14 +112,20 @@ $(function(){
 
 
 	if(isMobile == false){
+		var oldPagePosition = 0;
 		var colorBoxOptions = {
 			fixed:true,
 			height:"100%",
 			onOpen:function(){
+				oldPagePosition = $('body').scrollTop();
 				$("body").addClass("noScroll");
 			},
-			onClosed:function(){
+			onCleanup:function(){
 				$("body").removeClass("noScroll");
+				$('body').scrollTop(oldPagePosition);
+			},
+			onClosed:function(){
+								
 			}
 		};
 
@@ -156,12 +163,11 @@ $(function(){
 	}
         
         onAllPicturesLoad(function(){
-            fixWidthOfBareFaced();
+           fixWidthOfBareFaced();
             $("body").removeClass("noScroll");
             $("#loading").hide();
         });
 
 });
-
 
 

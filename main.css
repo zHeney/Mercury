@@ -16,6 +16,8 @@ button:focus{ outline: 0px;}
 a {text-decoration: none;}
   
 html, body{
+	width: 100%;
+	height: 100%;
 	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
 	position: relative;
 }
@@ -26,14 +28,42 @@ html, body{
 }
 
 body {
- 	background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
+	background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
  	line-height: 30px; 
  	font-family:'kids',sans-serif; 
  	font-size: 28px;
  	-webkit-font-smoothing: antialiased;
 }
 
-#loading {position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; background-color: rgba(39, 23, 3, 0.93); z-index: 999;}
+#loading {
+	position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
+	background-color: rgba(35, 21, 11, 1);
+	margin-left:281px; z-index: 1; 
+	background-image: url('pict/gridGround.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#gradientLoading{
+	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	background: -moz-linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	background: linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	height: 100%;
+	width: 47%;
+	right: 0px;
+	position: absolute;
+	z-index: 0;
+
+}
+.loadingText{	
+    font: bold 75px Griffy, Serif;
+    text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
+    cursor: default;
+    color: #CFAC6D;
+  	bottom: 2%;
+	left:50%;
+	position: fixed;
+
+}
 #spinner {position: absolute;top:45%; right:100%; width: 50px;
 
     -webkit-animation-name: spinner; 
@@ -123,7 +153,8 @@ body {
       
     animation-name: arch; 
     animation-duration: 1s;
-    animation-delay: 1s; 
+    animation-delay: 1s;
+    animation-fill-mode: forwards; 
 }
 @-webkit-keyframes arch {
     from {top: -680px;visibility:visible;}

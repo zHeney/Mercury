@@ -48,7 +48,7 @@
   </head>
 
 <!--..............................................BODY.....................................-->  
-<body class="noScroll">
+<body >
 
 <!--..............................................TOP-MENU.....................................-->  
   <div id="topMenu">
@@ -245,10 +245,14 @@ foreach($categories as $key=>$sortedAlbums){?>
   </div>
 </div>
 
+  <div id="loading">  
+    <div id="gradientLoading"></div>
+    <div class="loadingText">Loading...</div>
+    <div id="spinner">
+      <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
+    </div>  
+  </div>
 
-<div id="loading">
-  <div id="spinner"><img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif"></div>  
-</div>
 
   <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
   <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
