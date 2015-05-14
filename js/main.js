@@ -161,13 +161,20 @@ $(function(){
 	    colorBoxOptions.rel = ".other";
 	    $(".other").colorbox(colorBoxOptions);
 	}
-        
+
         onAllPicturesLoad(function(){
-           fixWidthOfBareFaced();
+            var shareUrl = $("#shareUrl").val();
+            /* Жека удали єтот коммент если хочешь увидеть как работают лайки
+            $("img.likeMe").each(function(){
+                var hrefUrl = shareUrl + $(this).attr("src");
+                console.log(hrefUrl);
+                var like = "<div class='likeButton'><div class='fb-like' data-width='150px' data-href='" + hrefUrl +"' data-layout='button' data-action='like' data-show-faces='true' data-share='false'></div></div>";
+                $(like).insertAfter($(this));
+            });//*/
+
+            fixWidthOfBareFaced();
             $("body").removeClass("noScroll");
             $("#loading").hide();
         });
 
 });
-
-

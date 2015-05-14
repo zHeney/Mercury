@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html>    
 <?php
+    define("HOST", "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    $facebookAppId = "381661761901601";
+
     require_once('ss/GooglePublicAPI.php');
     use mercury\GooglePublicAPI;
     $userId = "111770257557523342209";
@@ -9,7 +12,6 @@
     // here are my changes
     $albums = GooglePublicAPI::getAlbums($userId,true);
 
-  
      //$albums = GooglePublicAPI::getAlbums($userId);    
      //$latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
      //GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
@@ -28,12 +30,27 @@
       }
     }
 
+    // let's prepear some data for facebook LIKE    
+    
+    $shareUrlKey = "url";
+    $shareUrl = HOST . "?{$shareUrlKey}=";
+
+    $url = isset($_GET[$shareUrlKey]) && !empty($_GET[$shareUrlKey]) ? $_GET[$shareUrlKey] : null;
+
 ?>    
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   
+
+    <meta property="fb:app_id" content="<?php echo $facebookAppId;?>" />
+    <meta property="og:title" content="Handmade stuff" />
+    <meta property="og:site_name" content="Astrum Mercury"/>
+    <meta property="og:url" content="<?php echo HOST; ?>" />
+    <?php if($url){?>
+        <meta property="og:image" content="<?php echo $url; ?>" />
+    <?php } ?>
+
     <title>Mercury</title>
 
     <link rel="stylesheet" href="main.css" type="text/css" >
@@ -48,7 +65,16 @@
   </head>
 
 <!--..............................................BODY.....................................-->  
-<body >
+<body>
+    <input id="shareUrl" type="hidden" value="<?php echo $shareUrl; ?>"/>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=<?php echo $facebookAppId;?>";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 <!--..............................................TOP-MENU.....................................-->  
   <div id="topMenu">
@@ -81,6 +107,7 @@
     </div>
     
     <div id="arch"></div>
+    
   </div>
 <!--..............................................CONTENT......................................--> 
   <div id="content">
@@ -111,7 +138,7 @@ foreach($categories as $key=>$sortedAlbums){?>
 
               <!-- Photo open-->
               <div class="item">
-                    <img class="group<?php echo $key; ?>" src="<?php echo $photo->getSrc();?>">
+                    <img class="group<?php echo $key; ?> likeMe" src="<?php echo $photo->getSrc();?>">
                     <!--<div class="hoverGrid"></div>-->
                    <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>-->
               </div> 

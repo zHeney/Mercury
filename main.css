@@ -485,3 +485,5 @@ body {
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
 } 
+
+.likeButton{position: absolute;top: 10px;left: 10px;}
