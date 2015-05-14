@@ -438,7 +438,7 @@ body {
 	bottom:0%;
 	z-index: 10;
 	overflow: hidden;
-} }*/
+} 
 
 .itemLink{
 
@@ -484,4 +484,4 @@ body {
    -webkit-transform: translate(0, 3px);
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
-} 
+} }*/
