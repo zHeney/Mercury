@@ -4,11 +4,15 @@ var BIG_IMGMAX = 1024;
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 function onAllPicturesLoad(callBack){
+	var percentIndicator = $("#pageloading");
     var loaded = 0;
     $img = $("img");
+    var onePercent = 100/$img.length;
     $img.one('load', function() {
-        loaded++;
-       console.log("Loaded pictures " + loaded + " out of " + $img.length);
+    	loaded++;
+       	console.log("Loaded pictures " + loaded + " out of " + $img.length);
+
+		percentIndicator.html(parseInt(onePercent * loaded) + "%");
         
         if(loaded == $img.length){
             callBack();
@@ -120,6 +124,9 @@ $(function(){
 				oldPagePosition = $('body').scrollTop();
 				$("body").addClass("noScroll");
 			},
+			onComplete:function(){
+
+			},
 			onCleanup:function(){
 				$("body").removeClass("noScroll");
 				$('body').scrollTop(oldPagePosition);
@@ -161,13 +168,11 @@ $(function(){
 	    colorBoxOptions.rel = ".other";
 	    $(".other").colorbox(colorBoxOptions);
 	}
-        
+
         onAllPicturesLoad(function(){
-           fixWidthOfBareFaced();
+            fixWidthOfBareFaced();
             $("body").removeClass("noScroll");
             $("#loading").hide();
         });
 
 });
-
-

@@ -228,19 +228,19 @@ body {
 #content {position: relative; height: 100%;margin-left:281px;}
 
 .grid{display:none;}
-.gridWall{display:none; background: rgba(18, 9, 5, 0.54); border-bottom: 12px solid rgba(33, 21, 12, 0.97);}
+.gridWall{display:none; background: rgba(18, 9, 5, 0.54);}
 .active.gridWall{display:block;}
 
 .column-style{
 	-webkit-column-count: 3;
     -moz-column-count: 3; 
     column-count: 3;
-	-webkit-column-width: 250px; /* Chrome, Safari, Opera */
-    -moz-column-width: 250px; /* Firefox */
+	-webkit-column-width: 250px; 
+    -moz-column-width: 250px; 
     column-width: 250px;
-    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 10px; /* Firefox */
-    column-gap: 10px;
+    -webkit-column-gap: 0px; 
+    -moz-column-gap: 0px; 
+    column-gap: 0px;
     
 }
 
@@ -314,6 +314,7 @@ body {
 
 .item {
 	position: relative; 
+	padding-right: 10px;
 	margin-bottom: 10px;	
 }
 
@@ -348,6 +349,7 @@ body {
 	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
 }
 
+#gridOther img{margin-bottom: 10px;}
 
 /*.............................................HorizontalGallery.....................................*/
 
@@ -438,7 +440,7 @@ body {
 	bottom:0%;
 	z-index: 10;
 	overflow: hidden;
-} 
+} }*/
 
 .itemLink{
 
@@ -484,4 +486,4 @@ body {
    -webkit-transform: translate(0, 3px);
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
-} }*/
+} 

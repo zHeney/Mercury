@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>    
 <?php
+    define("HOST", "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+
     require_once('ss/GooglePublicAPI.php');
     use mercury\GooglePublicAPI;
     $userId = "111770257557523342209";
@@ -9,7 +11,6 @@
     // here are my changes
     $albums = GooglePublicAPI::getAlbums($userId,true);
 
-  
      //$albums = GooglePublicAPI::getAlbums($userId);    
      //$latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
      //GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
@@ -28,13 +29,33 @@
       }
     }
 
+    // let's prepear some data for facebook LIKE    
+    
+    $shareUrlKey = "url";
+    $shareUrl = HOST . "?{$shareUrlKey}=";
+
+    $url = isset($_GET[$shareUrlKey]) && !empty($_GET[$shareUrlKey]) ? $_GET[$shareUrlKey] : null;
+
 ?>    
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   
-    <title>Mercury</title>
+
+    <meta http-equiv="expires" content="0">
+    <meta name="Description" content="handmade products of twine, interior, photo frames, painted bottles, products from organic materials, caskets and ornamental boxes">
+    <meta name="author" content="Mercury, astrummercury@gmail.com"/>
+    <meta name="designer" content="zHeney, zHeney@ya.ru">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="english">
+    <meta name="robots" content="index,nofollow" />
+
+    <meta property="og:title" content="Astrum Mercury" />
+    <meta property="og:site_name" content="Astrum Mercury"/>
+    <meta property="og:description" content="Astrum Mercury"/>
+    <meta property="og:url" content="<?php echo HOST; ?>" />
+
+    <title>Astrum Mercury</title>
 
     <link rel="stylesheet" href="main.css" type="text/css" >
     <link rel="Stylesheet" type="text/css" href="smoothDivScroll.css" />
@@ -48,7 +69,7 @@
   </head>
 
 <!--..............................................BODY.....................................-->  
-<body >
+<body>
 
 <!--..............................................TOP-MENU.....................................-->  
   <div id="topMenu">
@@ -59,8 +80,7 @@
     <?php } ?>
     <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div> 
     <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
-    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div> 
-        
+    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>         
   </div> 
 <!--.............................................LEFT-MENU.....................................-->  
   <div id="leftMenu">
@@ -81,6 +101,7 @@
     </div>
     
     <div id="arch"></div>
+    
   </div>
 <!--..............................................CONTENT......................................--> 
   <div id="content">
@@ -111,7 +132,7 @@ foreach($categories as $key=>$sortedAlbums){?>
 
               <!-- Photo open-->
               <div class="item">
-                    <img class="group<?php echo $key; ?>" src="<?php echo $photo->getSrc();?>">
+                    <img class="group<?php echo $key; ?> " src="<?php echo $photo->getSrc();?>">
                     <!--<div class="hoverGrid"></div>-->
                    <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>-->
               </div> 
@@ -230,34 +251,52 @@ foreach($categories as $key=>$sortedAlbums){?>
 
 
 
-<!-- .......................................................DIFFERENT....................................................... -->
+<!-- .......................................................OTHER....................................................... -->
+
 <div id="gridOther" class="grid" style="display: none;">
-  <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
-   <!-- Different -->
-  <div class="albumName">Other</div>
-  <div class="makeMeScrollable">
-    <div class="barefaced other">
-      <div><img src="https://lh6.googleusercontent.com/-30rYRL5NZrs/VTjZ3FAU1LI/AAAAAAAAAS8/6JM5f2A-knA/w889-h845-no/CoffeeFlowerFrame1_Mercury.jpg"/></div>        
-      <div><img src="https://lh6.googleusercontent.com/-dZFI17YbQhg/VTjZ2ez9HzI/AAAAAAAAAS4/AUqZaj43gpc/w1127-h845-no/CoffeeFlowerFrame2_Mercury.jpg"/></div>
-      <div><img src="https://lh4.googleusercontent.com/-Ufj4D7ldsB4/VTjZ2DS6kBI/AAAAAAAAASw/yVSVHZvBA0Q/w1127-h845-no/CoffeeFlowerFrame3_Mercury.jpg"/></div>   
-      <div class="clearfix"></div>
-    </div>
-  </div>
+  <div class="column-style">
+    <div class="item">
+      <img class="other" src="https://lh3.googleusercontent.com/izQ0kQIjeeBU0SwAajCtnk4P7UacniWBA4xzqAoOqM0=w997-h935-no?Trees.jpg"/> 
+      <img class="other" src="https://lh3.googleusercontent.com/nhFeho7UujrDc7DkFZ1JoV5CIeDwGlVambQwCgZQMoA=w647-h935-no?GreenSeedTree.jpg"/>         
+      <img class="other" src="https://lh3.googleusercontent.com/waNlCfs85uu19MCP_v_qJRd5YNEGCVd41lW4bbWGZFY=w1103-h935-no?WoodBubbles.jpg"/> 
+      <img class="other" src="https://lh3.googleusercontent.com/GyyF2_FTtqGzx6U8FQfNF5-AOMMOhlZk3K7nVZyd3N0=w567-h800-no?CofeeTree.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/saLzFA6hvIHOPct01Szto3eAIkyjvbeN3k5xluDvMd8=w600-h800-no?CofeeTree_2.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/E5tTqzCMTCZTZ0AZSjCMCuLNMjFkcKN44wZ6sJVERkE=w1356-h935-no?CoffeeSnake_2.jpg"/>  
+      <img class="other" src="https://lh3.googleusercontent.com/tQ3TpkHGhhf8W8f8ak4qa2BVWMswzrBe53KZ5nzd44Q=w1412-h935-no?CoffeeSnake.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/HzppU9d5Z1NJUZgz0gox69OOGpOMThoxeiqgFz5IgKw=w1303-h800-no?GenieLamp.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/rLNO0wSzG9KlCHdq-_Flq_iV63UEVwjmEhd78bFA1R8=w1232-h935-no?MossTree.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/bWBAoQC2TRDMpQ8D3x3LGXNCezKpzps7TfISZvAmzwg=w1009-h935-no?Quilling.jpg"/>
+      <img class="other" src="https://lh3.googleusercontent.com/JrQCUZF5U3qArqzLR1_iUpAUyP7fNrLkEMYHQ77lyeE=w816-h935-no?Sheep.jpg"/>
+
+    </div>  
+  </div> 
+</div>  
+
+<!-- .......................................................LOADING....................................................... -->
+
+<div id="loading">  
+  <div id="gradientLoading"></div>
+  <div class="loadingText">Loading <span id="pageloading"></span></div>
+  <div id="spinner">
+    <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
+  </div>  
 </div>
 
-  <div id="loading">  
-    <div id="gradientLoading"></div>
-    <div class="loadingText">Loading...</div>
-    <div id="spinner">
-      <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
-    </div>  
-  </div>
+<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script src="js/jquery.kinetic.min.js" type="text/javascript"></script>
+<script src="js/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
+<script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
 
+<!-- ...................................................GoogleAnalytics................................................... -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-63459881-1', 'auto');
+ga('send', 'pageview');
+</script>
 
-  <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-  <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
-  <script src="js/jquery.kinetic.min.js" type="text/javascript"></script>
-  <script src="js/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
-  <script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
- </body>
+</body>
 </html>
