@@ -272,7 +272,9 @@ foreach($categories as $key=>$sortedAlbums){?>
 
     </div>  
   </div> 
-</div>  
+</div>
+
+</div>
 
 <!-- .......................................................LOADING....................................................... -->
 
@@ -284,8 +286,8 @@ foreach($categories as $key=>$sortedAlbums){?>
   </div>  
 </div>
 
-      <div class="wave"></div>
-      <div class="waveVertical"></div>
+<div class="wave"></div>
+<div class="waveVertical"></div>
 
 <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
