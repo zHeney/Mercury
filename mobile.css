@@ -1,5 +1,5 @@
 #loading{margin-left:0px; z-index: 999;background-image:none;}
-.loadingText{font-size: 100px;}
+.loadingText{font-size: 50px;}
 
 #leftMenu{display:none;}
 
@@ -14,8 +14,8 @@
 
 .active.grid{display:block;}
 
-/* .item{max-width:100%;}
-.item .title{display: block;}*/
+.item{padding-right: 0px;;}
+
 
 .item img:hover {
 

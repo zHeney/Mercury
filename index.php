@@ -143,6 +143,8 @@ foreach($categories as $key=>$sortedAlbums){?>
           
         <?php } ?>
       </div>
+
+
   </div> 
   <!-- Grid close-->
 
@@ -281,6 +283,9 @@ foreach($categories as $key=>$sortedAlbums){?>
     <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
   </div>  
 </div>
+
+      <div class="wave"></div>
+      <div class="waveVertical"></div>
 
 <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
