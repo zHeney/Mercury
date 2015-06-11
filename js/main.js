@@ -3,6 +3,39 @@
 var BIG_IMGMAX = 1024;
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+//start. NoHoverOnScroll
+// function disablehover() {
+// var body = document.body,
+//     timer;
+
+// window.addEventListener('scroll', function() {
+//   clearTimeout(timer);
+//   if(!body.classList.contains('disable-hover')) {
+//     body.classList.add('disable-hover')
+//   }
+
+//   timer = setTimeout(function(){
+//     body.classList.remove('disable-hover')
+//   },5000);
+// }, false);
+// }
+//end. NoHoverOnScroll
+
+var timer;
+var scrolled = false;
+$(document).scroll(function(){
+    if(scrolled == false){
+        scrolled = true;
+        $("body").removeClass('allowHover');
+    }
+    
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+        $("body").addClass('allowHover');
+        scrolled = false;
+     },250);
+});
+
 function onAllPicturesLoad(callBack){
 	var percentIndicator = $("#pageloading");
     var loaded = 0;

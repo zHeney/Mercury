@@ -94,12 +94,12 @@
         <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href=""><?php echo $key;?></a></div>
       <?php $activeElement = false; } ?>
 
-    <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
-    <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div> 
-    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>    
+      <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
+      <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
+      <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>       
       
     </div>
-    
+
     <div id="arch"></div>
     
   </div>
@@ -123,23 +123,21 @@ foreach($categories as $key=>$sortedAlbums){?>
 
         foreach($sortedAlbums as $album){?>
 
-          <!--
-            <div class="albumName"><?php echo $album->getTitle();?></div>
-            </div> -->
+          <!-- getTitle -->
+          <!--<div class="albumName"><?php echo $album->getTitle();?></div>-->
           <!--Close album name -->
           
           <?php foreach($album->getPhotos() as $photo){ ?>
 
-              <!-- Photo open-->
-              <div class="item">
-                    <img class="group<?php echo $key; ?> " src="<?php echo $photo->getSrc();?>">
-                    <!--<div class="hoverGrid"></div>-->
-                   <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div>-->
-              </div> 
-              <!-- Photo close-->
+          <!-- Photo open-->
+          <div class="item">
+            <img class="group<?php echo $key; ?> " src="<?php echo $photo->getSrc();?>">
+            <!-- getTitle -->
+            <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div> -->
+          </div> 
+          <!-- Photo close-->
 
           <?php } ?>
-         <!-- <div class="clear"> </div> -->
           
         <?php } ?>
       </div>
@@ -248,7 +246,6 @@ foreach($categories as $key=>$sortedAlbums){?>
     </div>
   </div>
 
-  <div class="footBorder"></div>
 </div>
 
 
@@ -286,9 +283,6 @@ foreach($categories as $key=>$sortedAlbums){?>
   </div>  
 </div>
 
-<div class="wave"></div>
-<div class="waveVertical"></div>
-
 <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
 <script src="js/jquery.kinetic.min.js" type="text/javascript"></script>
@@ -304,6 +298,10 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-63459881-1', 'auto');
 ga('send', 'pageview');
 </script>
+
+
+  <div class="waveVertical"></div>
+  <div class="wave"></div>
 
 </body>
 </html>

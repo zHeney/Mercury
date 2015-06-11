@@ -11,20 +11,13 @@
  	padding:0px;
 }
 
-button:focus{ outline: 0px;}
-
 a {text-decoration: none;}
   
 html, body{
-	width: 100%;
+	width: 100%; min-height: 100%;
 	
 	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
 	position: relative;
-}
-
-.noScroll{
-	position: fixed;
-	overflow-y: scroll;
 }
 
 body {
@@ -37,6 +30,7 @@ body {
  	-webkit-font-smoothing: antialiased;
 }
 
+/*.............................................LOADING.....................................*/
 #loading {
 	position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
 	background-color: rgba(35, 21, 11, 1);
@@ -54,7 +48,6 @@ body {
 	right: 0px;
 	position: absolute;
 	z-index: 0;
-
 }
 .loadingText{	
     font: bold 75px Griffy, Serif;
@@ -64,9 +57,9 @@ body {
   	text-align: center;
   	position: relative;
   	padding-top: 40%;
-
 }
-#spinner {position: absolute;top:45%; right:100%; width: 50px;
+#spinner {
+	position: absolute;top:45%; right:100%; width: 50px;
 
     -webkit-animation-name: spinner; 
     -webkit-animation-duration: 8s; 
@@ -86,10 +79,6 @@ body {
     to {right:-5%;}
 }
 
-.clear {clear: both;}
-
-.absolute{position:absolute;top:0px;left:0px;width:100%;}
-
 /*.............................................TOP-MENU.....................................*/
 
 #topMenu {display:none;}
@@ -99,7 +88,7 @@ body {
 
 #leftMenu{
 	background: #271703;
-	position: fixed; z-index: 999; 
+	position: fixed; z-index: 10; 
 	height: 100%; width:281px; 
 	
 	-webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
@@ -107,7 +96,7 @@ body {
 	box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);}
 
 
-#logo-area {/* background-image: url(pict/logo.png); */ 
+#logo-area {
 	margin-top: 14px;margin-left: 64px;
 	position: relative; 
 	height: 47px; 
@@ -171,8 +160,8 @@ body {
 	animation-play-state:paused;
 	-webkit-animation-play-state:paused;}
 
-
 #info-area {position: relative;}
+
 
 /*.............................................MENU.....................................*/
 
@@ -229,26 +218,15 @@ body {
 
 #content {position: relative; height: 100%;margin-left:281px;}
 #gridOther {background: rgba(18, 9, 5, 0.54);}
-.wave {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 65px;
-  background-image: url('pict/wave.png');
-  background-repeat: repeat-x;
-  z-index: 99999;
-}
-.waveVertical {
-  position: absolute;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  width: 41px;
-  background-image: url('pict/wave-vertical.png');
-  background-repeat: repeat-y; 
-}
+#gridFrames {  
+  position: relative;
+  min-height: 100%;
+  margin: 0 auto;}
+
 
 .grid{display:none;}
+.active.grid{display:block;}
+
 .gridWall{display:none; background: rgba(18, 9, 5, 0.54);}
 .active.gridWall{display:block;}
 
@@ -259,32 +237,25 @@ body {
 	-webkit-column-width: 250px; 
     -moz-column-width: 250px; 
     column-width: 250px;
-    -webkit-column-gap: 7px; 
-    -moz-column-gap: 7px; 
-    column-gap: 7px;
-    -webkit-column-rule: 7px solid rgba(17, 10, 7, 0.71); 
-    -moz-column-rule: 7px solid rgba(17, 10, 7, 0.71); 
-    column-rule: 7px solid rgba(17, 10, 7, 0.71); 
+    -webkit-column-gap: 0px; 
+    -moz-column-gap: 0px; 
+    column-gap: 0px;
+
 }
 
-.active.grid{display:block;}
-.clearfix{clear:both;}
-
+/*.............................................HEDLINES.....................................*/
 .topic{
 	background: rgba(81, 81, 81, 0.65);
 	position: relative; 	
 	height: 23px; width:100%;
-
-	
 	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
+	z-index: 1;
 
-	
 	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
-	z-index: 1;
 }
 .topicText{
 	color: rgb(116, 213, 255);
@@ -297,12 +268,10 @@ body {
     animation-iteration-count: 6;
 	animation-delay: 1s;
 
-
 	-webkit-animation-name: topicText; 
     -webkit-animation-duration: 1.5s; 
     -webkit-animation-iteration-count: 6;
     -webkit-animation-delay: 1s;
-
 }
 
 @-webkit-keyframes topicText {
@@ -338,41 +307,30 @@ body {
 .item {
 	position: relative; 
 	/*padding-right: 10px;*/
-	margin-bottom: 7px;	
 }
 
  .cboxPhoto, .item img {-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;}
 
 .item img {
+	border: 4px solid rgb(39, 23, 3);
+ 	box-sizing: border-box;
 	display: block;
  	width: 100%;
   	transition: .8s;
-  	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+  	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;-
 }
 .item img:hover {
 	cursor: pointer;
-
+/*
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 
 	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
 
-	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
+	-webkit-border-radius: 55px; -moz-border-radius: 55px; border-radius: 55px;
+*/
 }
-
-.item:hover .hoverGrid{
-	background: rgba(255, 255, 255, 0.1);
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);  
-}
-
-#gridOther img{margin-bottom: 7px;}
 
 /*.............................................HorizontalGallery.....................................*/
 
@@ -390,8 +348,6 @@ body {
 	display: table-cell;
 }
 
-.barefaced div{padding: 0px; margin: 0px;}
-
 .makeMeScrollable div.scrollableArea div img{
 	transition: .8s;
 	margin-right: 7px;
@@ -402,7 +358,7 @@ body {
 
 	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
 }
-.makeMeScrollable div.scrollableArea div img:hover {
+.makeMeScrollable div.scrollableArea div .allowHover img:hover {
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
@@ -413,100 +369,36 @@ body {
 
     box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
  }
- .footBorder {height: 50px;width: 100%; background: rgba(14, 4, 0, 0.43);}
 
+.barefaced div{padding: 0px; margin: 0px;}
 
- /*.............................................ROUNDSHAPE.....................................*/
-/*
-.roundShape{
-	bottom: 10%;
-	position: absolute;
-	left: 33.33%;
-	display: block;
-	z-index: 11;
-	height: 50%;
-	width: 53.33%;
-	padding: 0px;
-	border-radius: 150px;
-	background-color: rgba(48, 29, 18, 1);
-	opacity: 0;
-    transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
-    box-shadow: 0 0 15px #423A3A;
-    -moz-box-shadow: 0 0 15px #423A3A;
-	-webkit-box-shadow: 0 0 15px #423A3A;
+/*.............................................FOOTER.....................................*/
+.wave {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 65px;
+  background-image: url('pict/wave.png');
+  /*background-size: 8%;*/
+  background-repeat: repeat-x;
+  z-index: 11;
 }
-.active .item:hover .roundShape{
-	bottom: 25%;
-	opacity: 0.8;
+/*.waveVertical {
+  position: absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  width: 23px;
+  background-image: url('pict/wave-vertical.png');
+  background-repeat: repeat-y; 
+  z-index: 2;
+  display: none;
 }*/
-/*.............................................TITLE.....................................*/
-
-/*.item .title{
-	bottom:-1%;
-	width: 100%;
-	position: absolute;
-	z-index: 1;
-	text-align: center;
-	color: #FFFFFF;
-	opacity: 0;
- 	transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);*/
- 
- /*.......FONT.........*/
-
-/*  font: normal 20px/normal "Griffy", Helvetica, sans-serif;
-	-o-text-overflow: clip;
-	text-overflow: clip;
 
 
-.active .item:hover .title{  
-	opacity: 1;
-	bottom:0%;
-	z-index: 10;
-	overflow: hidden;
-} }*/
-
-.itemLink{
-
-	position: relative;
-	margin-right: 0px;
-	height: 40px;
-	padding-top: 10px;
-	border-top: 1px solid rgba(18, 11, 0, 1);
-	border-radius: 5px;
-	opacity:1;
-    color: #B37509;
-    text-decoration: none;
-    display: block;
-    z-index: 10;
-
-	text-align: center;
-
-	background: -webkit-linear-gradient(-90deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
-	background: -moz-linear-gradient(180deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
-	background: linear-gradient(180deg, rgba(48, 29, 18, 0.39) 0, rgba(23, 23, 23, 1) 100%);
-	
-	-webkit-transform: translate(0, 0);
-	-moz-transform: translate(0, 0);
-	transform: translate(0, 0);
- 
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
-
-	-webkit-box-shadow: 0 0 5px #000000;
-	-moz-box-shadow: 0 0 5px #000000;
-	box-shadow: 0 0 5px #000000;	
- 
-	cursor:pointer;
-	overflow:hidden;
-}
-.itemLink:active{
-	opacity:0.95;
-    z-index: 10;
-
-   -webkit-transform: translate(0, 3px);
-	-moz-transform: translate(0, 3px);
-	transform: translate(0, 3px);
-} 
+/*..................................................................................*/
+button:focus{outline: 0px;}
+.noScroll {position:fixed; overflow-y:scroll;}
+.absolute {position:absolute; top:0px; left:0px; width:100%;}
+.clearfix{clear:both;}
+/*.disable-hover {pointer-events: none;}*/
