@@ -21,21 +21,6 @@ var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 // }
 //end. NoHoverOnScroll
 
-var timer;
-var scrolled = false;
-$(document).scroll(function(){
-    if(scrolled == false){
-        scrolled = true;
-        $("body").removeClass('allowHover');
-    }
-    
-    clearTimeout(timer);
-    timer = setTimeout(function(){
-        $("body").addClass('allowHover');
-        scrolled = false;
-     },250);
-});
-
 function onAllPicturesLoad(callBack){
 	var percentIndicator = $("#pageloading");
     var loaded = 0;
@@ -108,8 +93,23 @@ var screenHelper = { // bad js way
 
 
 $(function(){
+    var timer;
+    var scrolled = false;
+    $(document).scroll(function(){
+        if(scrolled == false){
+            scrolled = true;
+            $("body").removeClass('allowHover');
+        }
+
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+            $("body").addClass('allowHover');
+            scrolled = false;
+         },250);
+    });
+
 	$(window).resize(function() {
-		screenHelper.checkWindowResize();
+            screenHelper.checkWindowResize();
 	});
 
 	screenHelper.checkWindowResize();

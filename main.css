@@ -319,9 +319,9 @@ body {
   	transition: .8s;
   	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;-
 }
-.item img:hover {
+.allowHover .item img:hover {
 	cursor: pointer;
-/*
+
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
@@ -329,7 +329,7 @@ body {
 	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
 
 	-webkit-border-radius: 55px; -moz-border-radius: 55px; border-radius: 55px;
-*/
+
 }
 
 /*.............................................HorizontalGallery.....................................*/
@@ -358,7 +358,7 @@ body {
 
 	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
 }
-.makeMeScrollable div.scrollableArea div .allowHover img:hover {
+.allowHover .makeMeScrollable div.scrollableArea div img:hover {
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
