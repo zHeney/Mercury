@@ -1,30 +1,28 @@
 /*.......FONT.........*/
-@font-face{ 
+@font-face { 
 	font-family: 'kids';
 	src: url('font/pfkidspro.eot');
 	src: url('font/PFKidsPro.ttf'),
    		 url('font/pfkidspro.woff') format('woff');
 }
 
-*{
- 	margin:0px;
- 	padding:0px;
-}
+* {margin:0px; padding:0px;}
 
 a {text-decoration: none;}
+a:link { color: #CFAC6D;}
+a:visited {color: #CFAC6D;}
   
-html, body{
-	width: 100%; min-height: 100%;
-	
+html {
+	width: 100%; height: 100%; position: relative;
 	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
-	position: relative;
 }
 
 body {
+	min-height: 100%;
 	position: relative;
 	background-color: rgb(39, 23, 3);
 	background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
- 	line-height: 30px; 
+
  	font-family:'kids',sans-serif; 
  	font-size: 28px;
  	-webkit-font-smoothing: antialiased;
@@ -40,16 +38,17 @@ body {
     background-size: contain;
 }
 #gradientLoading{
-	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+/*	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
 	background: -moz-linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
-	background: linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	background: linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);*/
 	height: 100%;
-	width: 47%;
-	right: 0px;
-	position: absolute;
-	z-index: 0;
+  	width: 600px;
+  	float: right;
+  	margin: 0 0 0 0;
+  	background-image: url('pict/gradline.png');
+  	background-repeat-x: no-repeat;
 }
-.loadingText{	
+.loadingText, {	
     font: bold 75px Griffy, Serif;
     text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
     cursor: default;
@@ -58,8 +57,20 @@ body {
   	position: relative;
   	padding-top: 40%;
 }
+.ContLoad{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background: none;
+    border: none;
+    outline: none;
+}
+
 #spinner {
-	position: absolute;top:45%; right:100%; width: 50px;
+	position: absolute;top:45%; right:100%; width: 50px; z-index: -1;
 
     -webkit-animation-name: spinner; 
     -webkit-animation-duration: 8s; 
@@ -108,22 +119,22 @@ body {
 
     -webkit-animation-name: logo; 
     -webkit-animation-duration: 10s; 
-    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: 1;
       
     animation-name: logo; 
     animation-duration: 10s; 
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 @-webkit-keyframes logo {
     0%   {color:#CFAC6D;}
     55%   {color:#CFAC6D;}
-    75%  {color:#ECC989;}
+    75%  {color:#FBEFDA}
     100% {color:#CFAC6D;}
 }
 @keyframes logo {
     0%   {color:#CFAC6D;}
     55%   {color:#CFAC6D;}
-    75%  {color:#ECC989;}
+    75%  {color:#FBEFDA}
     100% {color:#CFAC6D;}
 }
 
@@ -149,11 +160,11 @@ body {
 }
 @-webkit-keyframes arch {
     from {top: -680px;visibility:visible;}
-    to {top: -347px;}
+    to {top: -311px;}
 }
 @keyframes arch {
     from {top: -680px;visibility:visible;}
-    to {top: -347px;}
+    to {top: -311px;}
 }
 
 #arch:after {
@@ -165,7 +176,13 @@ body {
 
 /*.............................................MENU.....................................*/
 
-.menu {color: white;z-index: 4;display: block; text-align: center; padding: 2px 58px; position: relative;}
+.menu {
+	color: white;
+	z-index: 4;
+	display: block; 
+	text-align: center; 
+	padding: 2px 58px; 
+	position: relative;}
 
 .menu a{
 	background-color: rgb(102, 64, 16);
@@ -204,6 +221,7 @@ body {
 }
 
 .menu .activeElement{
+	  pointer-events: none;
 	background: -webkit-linear-gradient(-90deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
@@ -211,18 +229,17 @@ body {
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
-
 }
 
 /*.............................................GRID.....................................*/
 
-#content {position: relative; height: 100%;margin-left:281px;}
+#content {height: 100%; margin-left:281px;}
 #gridOther {background: rgba(18, 9, 5, 0.54);}
-#gridFrames {  
-  position: relative;
-  min-height: 100%;
-  margin: 0 auto;}
-
+#gridFrames, #gridBottles, #gridOther, #gridContacts {  
+  	position: relative;
+  	min-height: 100%;
+  	margin: 0 auto;
+}
 
 .grid{display:none;}
 .active.grid{display:block;}
@@ -231,6 +248,7 @@ body {
 .active.gridWall{display:block;}
 
 .column-style{
+
 	-webkit-column-count: 3;
     -moz-column-count: 3; 
     column-count: 3;
@@ -240,6 +258,17 @@ body {
     -webkit-column-gap: 0px; 
     -moz-column-gap: 0px; 
     column-gap: 0px;
+}
+.contacts{
+
+	font: bold 45px Griffy, Serif;
+    text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
+    cursor: default;
+    color: rgb(207, 172, 109);
+    text-align: center;
+    background: #3B2723;
+    width: 100%;
+	-webkit-user-select: auto; -khtml-user-select: auto; -moz-user-select: auto; -o-user-select: auto; user-select: auto;
 
 }
 
@@ -328,7 +357,7 @@ body {
 
 	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
 
-	-webkit-border-radius: 55px; -moz-border-radius: 55px; border-radius: 55px;
+	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
 
 }
 
@@ -376,13 +405,15 @@ body {
 .wave {
   position: absolute;
   bottom: 0px;
-  width: 100%;
-  height: 65px;
+  left:0px;
+  right:0px;
+  height: 36px;
   background-image: url('pict/wave.png');
-  /*background-size: 8%;*/
   background-repeat: repeat-x;
-  z-index: 11;
+  background-position-y: -1px;
+  /*z-index: 11;*/
 }
+
 /*.waveVertical {
   position: absolute;
   top:0px;

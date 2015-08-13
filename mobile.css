@@ -13,11 +13,12 @@
 #content{margin-left:0px;width: 100%;}
 
 .active.grid{display:block;}
+.contacts{font: bold 25px Griffy, Serif;}
 
-.item{padding-right: 0px;;}
+.item{padding-right: 0px;}
 
 
-.item img:hover {
+.allowHover .item img:hover {
 
 	transition: -webkit-border-radius 0s;
 	transition: -moz-border-radius 0s; 
@@ -60,7 +61,7 @@
 .barefaced div img{vertical-align: bottom;
 	margin-right:7px;	
 	height: 400px;
-	-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
 }
 
 .footBorder{display: none;}
