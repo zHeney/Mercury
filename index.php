@@ -1,42 +1,6 @@
 <!DOCTYPE HTML>
 <html>    
-<?php
-    define("HOST", "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-
-    require_once('ss/GooglePublicAPI.php');
-    use mercury\GooglePublicAPI;
-    $userId = "111770257557523342209";
-    //Yarutun 118008128849823559907
-    //Mercury 111770257557523342209
-    // here are my changes
-    $albums = GooglePublicAPI::getAlbums($userId,true);
-
-     //$albums = GooglePublicAPI::getAlbums($userId);    
-     //$latestPhotos = GooglePublicAPI::getLatestPhotos($userId,300);
-     //GooglePublicAPI::loadPhotosToAlbums($latestPhotos, $albums);
-
-    //lets do magic
-    $categories = array();
-    foreach($albums as $album){
-      $categoryName = "";
-      if(preg_match("(^(.*):(.*)$)",$album->getTitle(),$r) ){
-        $categoryName = trim($r[1]);
-        $album->setTitle(trim($r[2]));
-        if(!isset($categories[$categoryName])){
-          $categories[$categoryName] = array();
-        }
-        $categories[$categoryName][] = $album;
-      }
-    }
-
-    // let's prepear some data for facebook LIKE    
-    
-    $shareUrlKey = "url";
-    $shareUrl = HOST . "?{$shareUrlKey}=";
-
-    $url = isset($_GET[$shareUrlKey]) && !empty($_GET[$shareUrlKey]) ? $_GET[$shareUrlKey] : null;
-
-?>    
+   
   <head>
 
     <meta charset="utf-8">
@@ -72,100 +36,83 @@
 <body class="allowHover">
 
 <!--..............................................TOP-MENU.....................................-->  
-  <div id="topMenu">
-    <?php 
-    $activeElement = true;
-    foreach($categories as $key=>$sortedAlbums){ ?>
-        <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href=""><?php echo $key;?></a></div>
-    <?php } ?>
-    <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div> 
-    <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
-    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div> 
-    <div class="menu"><a targetGrid="#gridContacts" href="">Contacts</a></div>        
-  </div> 
-<!--.............................................LEFT-MENU.....................................-->  
-  <div id="leftMenu">
-    <!-- Logo -->
-    <div id="logo-area">Mercury</div>
-    <!-- Menu -->
-    <div id="info-area">
-      <?php 
-      $activeElement = true;
-      foreach($categories as $key=>$sortedAlbums){ ?>
-        <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#grid-<?php echo $key;?>" animationFrom="left" href=""><?php echo $key;?></a></div>
-      <?php $activeElement = false; } ?>
-
-      <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
-      <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
-      <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>
-      <div class="menu"><a targetGrid="#gridContacts" href="">Contacts</a></div>      
-      
-    </div>
-
-    <div id="arch"></div>
-    
-  </div>
-<!--..............................................CONTENT......................................--> 
-  <div id="content">
-<!--...............................................GRID........................................--> 
- 
+<div id="topMenu">
 <?php 
-$first = true;
+    $activeElement = true;?>
+  <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">Wall</a></div> 
+  <div class="menu"><a targetGrid="#gridTwine" href="">Twine</a></div>
+  <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div> 
+  <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
+  <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div> 
+  <div class="menu"><a targetGrid="#gridContacts" href="">Contacts</a></div>        
+</div> 
+<!--.............................................LEFT-MENU.....................................-->  
+<div id="leftMenu">
+                                               <!-- Logo -->
+  <div id="logo-area">Mercury</div>
+                                               <!-- Menu -->
+  <div id="info-area">
+<?php $activeElement = true;?>
+    <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">Wall</a></div>
+    <div class="menu"><a targetGrid="#gridTwine" href="">Twine</a></div>
+    <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
+    <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
+    <div class="menu"><a targetGrid="#gridOther" href="">Other</a></div>
+    <div class="menu"><a targetGrid="#gridContacts" href="">Contacts</a></div> 
+  </div>
 
-foreach($categories as $key=>$sortedAlbums){?>
+  <div id="arch"></div>
 
-    <!-- Grid open -->
-    <div id="grid-<?php echo $key;?>" imagegroup="group<?php echo $key; ?>" class="gridWall grid <?php if($first){ echo "active";}?>">
+</div>
 
-      <div class="albumName">Wall</div>
+<!--..............................................CONTENT......................................--> 
+<div id="content">
 
-      <div class="column-style"><!-- items are here -->
+<!--...............................................WALL........................................--> 
+  <?php $first = true; ?>
 
-        <?php
+  <div id="gridWall"  class="gridWall grid <?php if($first){ echo "active";}?>">
+   <div class="column-style">  
+     <div class="item">
+       <img class="wall" src="https://lh3.googleusercontent.com/Pu5it6YcJfcP6iKnM6nf6b4JvTppFKHyxSTl70iGvXE=w621-h935-no?RabbitHat_Mercury.png" />
+       <img class="wall" src="https://lh3.googleusercontent.com/izQ0kQIjeeBU0SwAajCtnk4P7UacniWBA4xzqAoOqM0=w997-h935-no?Trees.jpg"/> 
+       <!-- <img class="wall" src="https://lh6.googleusercontent.com/-iTcjj5MyWgI/VTjYr3UQPNI/AAAAAAAAASc/-z8e0ckB8xQ/h845-no/Frame8_Mercury.jpg"/> -->
+       <!-- <img class="wall" src="https://lh4.googleusercontent.com/-mdI3u_ftthg/VS69wH0ybGI/AAAAAAAAARE/nZzlh_LMnv8/h1024-no/Frame2_Mercury.jpg"/> -->
+       <!-- <img class="wall" src="https://lh3.googleusercontent.com/-I1lKUdhnI2Y/VS69v6k_qaI/AAAAAAAAARE/ywAm0GwNcLI/h1024-no/Frame3_Mercury.jpg"/> -->
+       <!-- <img class="wall" src="https://lh3.googleusercontent.com/-tVLhq2ps76I/VS694NUCrSI/AAAAAAAAARE/9Muhf19ee-s/h1024-no/Frame5_Mercury.jpg"/> -->
+       <img class="wall" src="https://lh4.googleusercontent.com/-9MRkn8PGSpQ/VS1pSKTF9MI/AAAAAAAAAFU/gVMQV_WoVjQ/w634-h845-no/Bottle-twine_Mercury_1.jpg"/>
+       <img class="wall" src="https://lh5.googleusercontent.com/-bERCfjhvv08/VR7fDss2wbI/AAAAAAAAABA/TJenfXg5P90/w563-h845-no/Bottle-dark_Mercury_1.png" />
+       <img class="wall" src="https://lh5.googleusercontent.com/-aP9djcJRlLQ/VR7lwIcFGhI/AAAAAAAAAB8/rc4i5sRsjII/w563-h845-no/Bottle-dark2_Mercury_1.png" />
+       <!-- <img class="wall" src="https://lh3.googleusercontent.com/bWBAoQC2TRDMpQ8D3x3LGXNCezKpzps7TfISZvAmzwg=w1009-h935-no?Quilling.jpg"/> -->
+    
+     </div>  
+   </div> 
+  </div>
 
-        foreach($sortedAlbums as $album){?>
+<!-- .......................................................TWINE....................................................... -->
 
-          <!-- getTitle -->
-          <!--<div class="albumName"><?php echo $album->getTitle();?></div>-->
-          <!--Close album name -->
-          
-          <?php foreach($album->getPhotos() as $photo){ ?>
+  <div id="gridTwine" class="grid" style="display: none;">
 
-          <!-- Photo open-->
-          <div class="item">
-            <img class="group<?php echo $key; ?> " src="<?php echo $photo->getSrc();?>">
-            <!-- getTitle -->
-            <!-- <div class="title"><a href="#" class="itemLink"><?php echo $photo->getTitle();?></a></div> -->
-          </div> 
-          <!-- Photo close-->
-
-          <?php } ?>
-          
-        <?php } ?>
-      </div>
-
-  <div class="wave"></div>
-  </div> 
-  <!-- Grid close-->
-
-  <?php
-  $first = false;
-}?>
+   <div class="albumName">Rabbit</div>
+   <div class="makeMeScrollable">
+     <div class="barefaced">
+       <div><img class="twine" src="https://lh3.googleusercontent.com/Pu5it6YcJfcP6iKnM6nf6b4JvTppFKHyxSTl70iGvXE=w621-h935-no?RabbitHat_Mercury.png" /></div>
+     </div>
+   </div>
+  </div>
 
 <!-- .......................................................BOTTLES....................................................... -->
 
   <div id="gridBottles" class="grid" style="display: none;">
-   <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
-
-   <!-- Bottle-darkRed-->
+ 
+    <!-- Bottle-darkRed-->
    <div class="albumName">Magic vessel</div>
    <div class="makeMeScrollable">
      <div class="barefaced">
        <div><img class="bottles" src="https://lh6.googleusercontent.com/-87801oN7Hkw/VS0eo33sAjI/AAAAAAAAACc/2fCb5xgdfvc/w548-h845-no/Bottle-darkRed_Mercury_1.png" /></div>
        <div><img class="bottles" src="https://lh6.googleusercontent.com/-s2WyugNGBAw/VS0xBhl7JII/AAAAAAAAADU/ivpD90bRu5c/w508-h845-no/Bottle-darkRed_Mercury_4.png" /></div>
        <div><img class="bottles" src="https://lh6.googleusercontent.com/-Poexx1WctWw/VS0nPzdKFPI/AAAAAAAAADA/6pjTIBMxGTE/w1127-h845-no/Bottle-darkRed_Mercury_3.jpg" /></div>
-       <div><img class="bottles" src="https://lh4.googleusercontent.com/-tXydK33IClU/VS0kdaYvwFI/AAAAAAAAACw/MQFvMZblvEE/w1127-h845-no/Bottle-darkRed_Mercury_2.jpg" /></div>
-       <div class="clearfix"></div>
+       <div><img class="bottles" src="https://lh4.googleusercontent.com/-tXydK33IClU/VS0kdaYvwFI/AAAAAAAAACw/MQFvMZblvEE/w1127-h845-no/Bottle-darkRed_Mercury_2.jpg" /></div>     
      </div>
    </div>
 
@@ -178,8 +125,7 @@ foreach($categories as $key=>$sortedAlbums){?>
       <div><img class="bottles" src="https://lh5.googleusercontent.com/-6Mr0W2fsFT4/VS1FqOwJlhI/AAAAAAAAAEA/kMfM_iMzauI/w563-h845-no/Bottle-gyps_Mercury_2.JPG" /></div> 
       <div><img class="bottles" src="https://lh4.googleusercontent.com/-J_gpgs1Z96M/VS1FfVuV7TI/AAAAAAAAADo/lGAZa-ySEeQ/w564-h845-no/Bottle-gyps_Mercury_3.jpg" /></div>        
       <div><img class="bottles" src="https://lh4.googleusercontent.com/-8TPbvUB-Zvo/VS1Fk8gUiRI/AAAAAAAAAD4/vNyPNQxYwnU/w564-h845-no/Bottle-gyps_Mercury_4.jpg" /></div>  
-      <div><img class="bottles" src="https://lh3.googleusercontent.com/-i2H5sZLQgNM/VS1UvrXqHLI/AAAAAAAAAEU/-OWz5Y1ywAE/w1214-h845-no/Bottle-gyps_Mercury_5.jpg" /></div>  
-      <div class="clearfix"></div>
+      <div><img class="bottles" src="https://lh3.googleusercontent.com/-i2H5sZLQgNM/VS1UvrXqHLI/AAAAAAAAAEU/-OWz5Y1ywAE/w1214-h845-no/Bottle-gyps_Mercury_5.jpg" /></div>      
     </div>
    </div>
 
@@ -190,8 +136,7 @@ foreach($categories as $key=>$sortedAlbums){?>
       <div><img class="bottles" src="https://lh4.googleusercontent.com/-9MRkn8PGSpQ/VS1pSKTF9MI/AAAAAAAAAFU/gVMQV_WoVjQ/w634-h845-no/Bottle-twine_Mercury_1.jpg" /></div>        
       <div><img class="bottles" src="https://lh4.googleusercontent.com/-1Gu--515DAU/VS1pGB2_2vI/AAAAAAAAAFM/ZHuMKbkByaY/w564-h845-no/Bottle-twine_Mercury_3.jpg"/></div>
       <div><img class="bottles" src="https://lh4.googleusercontent.com/-h__SpGXhxig/VS1qhMLPMoI/AAAAAAAAAFw/x1DBjmj0eWw/w564-h845-no/Bottle-twine_Mercury_2.JPG"/></div>
-      <div><img class="bottles" src="https://lh4.googleusercontent.com/-Kf_RG39yxjw/VS1wECK3T2I/AAAAAAAAAGI/ggfL87rojmw/w670-h845-no/Bottle-twine_Mercury_4.jpg"/></div>
-      <div class="clearfix"></div>
+      <div><img class="bottles" src="https://lh4.googleusercontent.com/-Kf_RG39yxjw/VS1wECK3T2I/AAAAAAAAAGI/ggfL87rojmw/w670-h845-no/Bottle-twine_Mercury_4.jpg"/></div>      
     </div>
    </div>
 
@@ -203,8 +148,7 @@ foreach($categories as $key=>$sortedAlbums){?>
        <div><img class="bottles" src="https://lh3.googleusercontent.com/-SHlKtIcJjGY/VR7fKzL0U5I/AAAAAAAAABQ/cA-UmR2ecBc/w563-h845-no/Bottle-dark_Mercury_2.JPG"/></div>
        <div><img class="bottles" src="https://lh5.googleusercontent.com/-f3ddTqHP3tM/VR7fKumnnyI/AAAAAAAAABM/H3dDT5WTwtc/w563-h845-no/Bottle-dark_Mercury_3.JPG"/></div>
        <div><img class="bottles" src="https://lh3.googleusercontent.com/-BuM-fM4tdxk/VR7fVHMVPLI/AAAAAAAAABY/KK-bDCHS_DU/w563-h845-no/Bottle-dark_Mercury_4.JPG"/></div>
-       <div><img class="bottles" src="https://lh3.googleusercontent.com/-9Zrbh1HsIs0/VR7fbFC_QxI/AAAAAAAAABg/E2QSYiUXMts/w563-h845-no/Bottle-dark_Mercury_5.JPG"/></div>
-       <div class="clearfix"></div>
+       <div><img class="bottles" src="https://lh3.googleusercontent.com/-9Zrbh1HsIs0/VR7fbFC_QxI/AAAAAAAAABg/E2QSYiUXMts/w563-h845-no/Bottle-dark_Mercury_5.JPG"/></div>       
      </div>
    </div>
 
@@ -213,16 +157,15 @@ foreach($categories as $key=>$sortedAlbums){?>
    <div class="makeMeScrollable">
      <div class="barefaced">
        <div><img class="bottles" src="https://lh5.googleusercontent.com/-aP9djcJRlLQ/VR7lwIcFGhI/AAAAAAAAAB8/rc4i5sRsjII/w563-h845-no/Bottle-dark2_Mercury_1.png" /></div>        
-       <div><img class="bottles" src="https://lh5.googleusercontent.com/-mpS5h1AHaa4/VR7lx_SAmXI/AAAAAAAAACA/c1x4G4T-UeM/w563-h845-no/Bottle-dark2_Mercury_2.JPG"/></div>
-       <div class="clearfix"></div>
+       <div><img class="bottles" src="https://lh5.googleusercontent.com/-mpS5h1AHaa4/VR7lx_SAmXI/AAAAAAAAACA/c1x4G4T-UeM/w563-h845-no/Bottle-dark2_Mercury_2.JPG"/></div>       
      </div>
    </div>
- </div>
+  </div>
 
 <!-- .......................................................FRAMES....................................................... -->
 
 <div id="gridFrames" class="grid" style="display: none;">
-  <div class="topic"><p class="topicText"><---- Touch to scroll ----></p></div>
+
   <div class="albumName">Photo frames</div>   
   <div class="makeMeScrollable">
     <div class="barefaced">
@@ -232,8 +175,7 @@ foreach($categories as $key=>$sortedAlbums){?>
       <div><img class="frames" src="https://lh5.googleusercontent.com/-KJN7ihRV1lE/VS69vdZWL-I/AAAAAAAAARE/3t9eEUI2fqA/h1024-no/Frame1_Mercury.jpg"/></div>        
       <div><img class="frames" src="https://lh4.googleusercontent.com/-mdI3u_ftthg/VS69wH0ybGI/AAAAAAAAARE/nZzlh_LMnv8/h1024-no/Frame2_Mercury.jpg"/></div>
       <div><img class="frames" src="https://lh3.googleusercontent.com/-I1lKUdhnI2Y/VS69v6k_qaI/AAAAAAAAARE/ywAm0GwNcLI/h1024-no/Frame3_Mercury.jpg"/></div>
-      <div><img class="frames" src="https://lh6.googleusercontent.com/-8xMSM-0cKps/VS694wiBZvI/AAAAAAAAARE/0cvQHdJbcjY/h1024-no/Frame6_Mercury.jpg"/></div>
-      <div class="clearfix"></div>
+      <div><img class="frames" src="https://lh6.googleusercontent.com/-8xMSM-0cKps/VS694wiBZvI/AAAAAAAAARE/0cvQHdJbcjY/h1024-no/Frame6_Mercury.jpg"/></div>      
     </div>
   </div>
 
@@ -242,11 +184,10 @@ foreach($categories as $key=>$sortedAlbums){?>
     <div class="barefaced">
       <div><img class="frames" src="https://lh6.googleusercontent.com/-30rYRL5NZrs/VTjZ3FAU1LI/AAAAAAAAAS8/6JM5f2A-knA/w889-h845-no/CoffeeFlowerFrame1_Mercury.jpg"/></div>        
       <div><img class="frames" src="https://lh6.googleusercontent.com/-dZFI17YbQhg/VTjZ2ez9HzI/AAAAAAAAAS4/AUqZaj43gpc/w1127-h845-no/CoffeeFlowerFrame2_Mercury.jpg"/></div>
-      <div><img class="frames" src="https://lh4.googleusercontent.com/-Ufj4D7ldsB4/VTjZ2DS6kBI/AAAAAAAAASw/yVSVHZvBA0Q/w1127-h845-no/CoffeeFlowerFrame3_Mercury.jpg"/></div>   
-      <div class="clearfix"></div>
+      <div><img class="frames" src="https://lh4.googleusercontent.com/-Ufj4D7ldsB4/VTjZ2DS6kBI/AAAAAAAAASw/yVSVHZvBA0Q/w1127-h845-no/CoffeeFlowerFrame3_Mercury.jpg"/></div>      
     </div>
   </div>
-</div>
+</div>  
 
 <!-- .......................................................OTHER....................................................... -->
 
@@ -264,33 +205,35 @@ foreach($categories as $key=>$sortedAlbums){?>
       <img class="other" src="https://lh3.googleusercontent.com/rLNO0wSzG9KlCHdq-_Flq_iV63UEVwjmEhd78bFA1R8=w1232-h935-no?MossTree.jpg"/>
       <img class="other" src="https://lh3.googleusercontent.com/bWBAoQC2TRDMpQ8D3x3LGXNCezKpzps7TfISZvAmzwg=w1009-h935-no?Quilling.jpg"/>
       <img class="other" src="https://lh3.googleusercontent.com/JrQCUZF5U3qArqzLR1_iUpAUyP7fNrLkEMYHQ77lyeE=w816-h935-no?Sheep.jpg"/>
-
     </div>  
   </div> 
 </div>
 
 <!-- .......................................................CONTACTS....................................................... -->
 
-<div id="gridContacts" class="grid" style="display: none;">
-<div class="contacts">astrummercury@gmail.com
-<p><a href="https://www.facebook.com/mercury.astrum">www.facebook.com/mercury.astrum</a></p></div>
-</div>
+  <div id="gridContacts" class="grid" style="display: none;">
+  <button class="ContLoad"><div class="contacts">astrummercury@gmail.com
+  <p><a href="https://www.facebook.com/mercury.astrum" target="_blank">www.facebook.com/mercury.astrum</a></p></div>
+  </div></div></button>
 
 <!-- .......................................................WAVE....................................................... -->
 
-<div class="wave"></div>
+  <div class="wave"></div>
 
 <!-- .......................................................LOADING....................................................... -->
 
-<div id="loading">  
-  <div id="gradientLoading"></div>
-  <button class="ContLoad"><div class="loadingText">Loading <span id="pageloading"></span></div></button>
-  <div id="spinner">
-    <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
+  <div id="loading">  
+    <div id="gradientLoading"></div>
+    <button class="ContLoad"><div class="loadingText">Loading <span id="pageloading"></span></div></button>
+    <div id="spinner">
+      <img src="pict/spinner-eater.gif"> <img src="pict/spinner-ball.gif">
+    </div>
   </div>
-  <div class="clearfix"></div>  
+
+                                                    <!-- Close Content -->
 </div>
 
+                                                      <!-- Scripts -->
 <script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
 <script src="js/jquery.kinetic.min.js" type="text/javascript"></script>

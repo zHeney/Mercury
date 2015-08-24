@@ -168,6 +168,7 @@ $(function(){
 								
 			}
 		};
+// .................................................HorizontalGallery
 
 		$(".makeMeScrollable").smoothDivScroll({
 			hotSpotScrolling: false,
@@ -188,6 +189,14 @@ $(function(){
 			colorBoxOptions.rel = groupClass;
 			$(groupClass).colorbox(colorBoxOptions);
 		});
+
+		$(".wall").each(function(){$(this).attr("href",$(this).attr("src"));});
+		colorBoxOptions.rel = ".wall";
+	    $(".wall").colorbox(colorBoxOptions);
+
+	    $(".twine").each(function(){$(this).attr("href",$(this).attr("src"));});
+		colorBoxOptions.rel = ".twine";
+	    $(".twine").colorbox(colorBoxOptions);
 
 		$(".bottles").each(function(){$(this).attr("href",$(this).attr("src"));});
 		colorBoxOptions.rel = ".bottles";

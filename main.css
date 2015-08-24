@@ -8,13 +8,23 @@
 
 * {margin:0px; padding:0px;}
 
-a {text-decoration: none;}
-a:link { color: #CFAC6D;}
-a:visited {color: #CFAC6D;}
+a {
+	text-decoration: none;
+}
+a:link {
+	color: #CFAC6D;
+}
+a:visited {
+	color: #CFAC6D;
+}
   
 html {
-	width: 100%; height: 100%; position: relative;
-	-webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none;
+	width: 100%; height: 100%;
+	-webkit-user-select: none; 
+	-khtml-user-select: none; 
+	-moz-user-select: none; 
+	-o-user-select: none; 
+	user-select: none;
 }
 
 body {
@@ -26,68 +36,6 @@ body {
  	font-family:'kids',sans-serif; 
  	font-size: 28px;
  	-webkit-font-smoothing: antialiased;
-}
-
-/*.............................................LOADING.....................................*/
-#loading {
-	position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
-	background-color: rgba(35, 21, 11, 1);
-	margin-left:281px; z-index: 1; 
-	background-image: url('pict/gridGround.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-#gradientLoading{
-/*	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
-	background: -moz-linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
-	background: linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);*/
-	height: 100%;
-  	width: 600px;
-  	float: right;
-  	margin: 0 0 0 0;
-  	background-image: url('pict/gradline.png');
-  	background-repeat-x: no-repeat;
-}
-.loadingText, {	
-    font: bold 75px Griffy, Serif;
-    text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
-    cursor: default;
-    color: #CFAC6D;
-  	text-align: center;
-  	position: relative;
-  	padding-top: 40%;
-}
-.ContLoad{
-	width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: auto;
-    background: none;
-    border: none;
-    outline: none;
-}
-
-#spinner {
-	position: absolute;top:45%; right:100%; width: 50px; z-index: -1;
-
-    -webkit-animation-name: spinner; 
-    -webkit-animation-duration: 8s; 
-    animation-name: spinner;
-    animation-duration: 8s;
-    -webkit-animation-timing-function: linear; 
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite; 
-    animation-iteration-count: infinite;
-}
-@-webkit-keyframes spinner {
-    from {right:100%;}
-    to {right:-5%;}
-}
-@keyframes spinner {
-    from {right:100%;}
-    to {right:-5%;}
 }
 
 /*.............................................TOP-MENU.....................................*/
@@ -160,18 +108,21 @@ body {
 }
 @-webkit-keyframes arch {
     from {top: -680px;visibility:visible;}
-    to {top: -311px;}
+    to {top: -280px;}
 }
 @keyframes arch {
     from {top: -680px;visibility:visible;}
-    to {top: -311px;}
+    to {top: -280px;}
 }
 
 #arch:after {
 	animation-play-state:paused;
-	-webkit-animation-play-state:paused;}
+	-webkit-animation-play-state:paused;
+}
 
-#info-area {position: relative;}
+#info-area {
+	position: relative;
+}
 
 
 /*.............................................MENU.....................................*/
@@ -182,9 +133,10 @@ body {
 	display: block; 
 	text-align: center; 
 	padding: 2px 58px; 
-	position: relative;}
+	position: relative;
+}
 
-.menu a{
+.menu a {
 	background-color: rgb(102, 64, 16);
 	text-shadow: 3px 1px 1px rgba(48, 29, 18, 1);
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
@@ -212,7 +164,7 @@ body {
 	overflow:hidden;
 } 
 
-.menu a:active{
+.menu a:active {
 	opacity: 0.75;
 
    -webkit-transform: translate(0, 3px);
@@ -220,8 +172,8 @@ body {
 	transform: translate(0, 3px);
 }
 
-.menu .activeElement{
-	  pointer-events: none;
+.menu .activeElement {
+	pointer-events: none;
 	background: -webkit-linear-gradient(-90deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
@@ -233,22 +185,29 @@ body {
 
 /*.............................................GRID.....................................*/
 
-#content {height: 100%; margin-left:281px;}
-#gridOther {background: rgba(18, 9, 5, 0.54);}
-#gridFrames, #gridBottles, #gridOther, #gridContacts {  
+#content {
+	height: 100%; 
+	margin-left:281px;
+}
+
+#gridWall, #gridFrames, #gridBottles, #gridOther, #gridContacts, #gridTwine {  
   	position: relative;
   	min-height: 100%;
   	margin: 0 auto;
+  	background: rgba(14, 4, 0, 0.43);
 }
 
-.grid{display:none;}
-.active.grid{display:block;}
+.grid {
+	display:none;
+}
+.active.grid {
+	display:block;
+}
 
-.gridWall{display:none; background: rgba(18, 9, 5, 0.54);}
-.active.gridWall{display:block;}
+/*.gridWall{display:none; background: rgba(18, 9, 5, 0.54);}*/
+/*.active.gridWall{display:block;}*/
 
-.column-style{
-
+.column-style {
 	-webkit-column-count: 3;
     -moz-column-count: 3; 
     column-count: 3;
@@ -259,21 +218,29 @@ body {
     -moz-column-gap: 0px; 
     column-gap: 0px;
 }
-.contacts{
-
+.contacts {
+	box-sizing: border-box;
+	padding-left: 30px;
+	padding-top: 20px;  
+	padding-bottom: 20px;    
+	border-top: 5px solid #77541C;    
+	border-bottom: 5px solid #77541C;
 	font: bold 45px Griffy, Serif;
     text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
     cursor: default;
-    color: rgb(207, 172, 109);
-    text-align: center;
-    background: #3B2723;
+    color: rgb(207, 172, 109);    
+	/* text-align: center; */    
+	background: rgba(41, 24, 3, 0.79);
     width: 100%;
-	-webkit-user-select: auto; -khtml-user-select: auto; -moz-user-select: auto; -o-user-select: auto; user-select: auto;
-
+	-webkit-user-select: text; 
+	-khtml-user-select: text; 
+	-moz-user-select: text; 
+	-o-user-select: text; 
+	user-select: text;
 }
 
-/*.............................................HEDLINES.....................................*/
-.topic{
+/*.............................................HEADLINES.....................................*/
+.topic {
 	background: rgba(81, 81, 81, 0.65);
 	position: relative; 	
 	height: 23px; width:100%;
@@ -286,35 +253,9 @@ body {
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
 }
-.topicText{
-	color: rgb(116, 213, 255);
-	opacity: 0.6;
-	text-align: center;
-	transition: 1s;
 
-	animation-name: topicText; 
-    animation-duration: 1.5s; 
-    animation-iteration-count: 6;
-	animation-delay: 1s;
 
-	-webkit-animation-name: topicText; 
-    -webkit-animation-duration: 1.5s; 
-    -webkit-animation-iteration-count: 6;
-    -webkit-animation-delay: 1s;
-}
-
-@-webkit-keyframes topicText {
-    0%   {opacity: 0.6;}
-    50%  {opacity: 1;}
-    100% {opacity: 0.6;}
-}
-@keyframes topicText {
-    0%   {opacity: 0.6;}
-    50%  {opacity: 1;}
-    100% {opacity: 0.6;}
-}
-
-.albumName{
+.albumName {
 	background: rgba(82, 50, 11, 1);
 	position: relative; 	
 	height: 27px; width:100%;
@@ -338,7 +279,11 @@ body {
 	/*padding-right: 10px;*/
 }
 
- .cboxPhoto, .item img {-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;}
+ .cboxPhoto, .item img {
+ 	-webkit-border-radius: 16px; 
+ 	-moz-border-radius: 16px; 
+ 	border-radius: 16px;
+ }
 
 .item img {
 	border: 4px solid rgb(39, 23, 3);
@@ -346,8 +291,11 @@ body {
 	display: block;
  	width: 100%;
   	transition: .8s;
-  	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;-
+  	box-shadow: 0 0 45px #050505; 
+  	-moz-box-shadow: 0 0 45px #050505; 
+  	-webkit-box-shadow: 0 0 45px #050505;
 }
+
 .allowHover .item img:hover {
 	cursor: pointer;
 
@@ -355,51 +303,135 @@ body {
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 
-	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
+	-webkit-transition-delay: .1s;
+	-moz-transition-delay: .1s;
+	transition-delay: .1s;
 
-	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
-
+	-webkit-border-radius: 25px; 
+	-moz-border-radius: 25px; 
+	border-radius: 25px;
 }
 
 /*.............................................HorizontalGallery.....................................*/
 
-.makeMeScrollable{
+.makeMeScrollable {
 	width: 100%;
 	height: 400px;
 	position: relative;
 	background: rgba(14, 4, 0, 0.43);
  	/*border-top: 8px solid rgba(39, 23, 3, 1);*/
-	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+	box-shadow: 0 0 45px #050505; 
+	-moz-box-shadow: 0 0 45px #050505; 
+	-webkit-box-shadow: 0 0 45px #050505;
 }
 
-.makeMeScrollable div.scrollableArea div{
-	
+.makeMeScrollable div.scrollableArea div {
 	display: table-cell;
 }
 
-.makeMeScrollable div.scrollableArea div img{
+.makeMeScrollable div.scrollableArea div img {
 	transition: .8s;
 	margin-right: 7px;
 	padding: 0;
 	max-height: 400px;
 
-	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
+	-webkit-border-radius: 16px; 
+	-moz-border-radius: 16px; 
+	border-radius: 16px;
 
-	box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+	box-shadow: 0 0 45px #050505; 
+	-moz-box-shadow: 0 0 45px #050505; 
+	-webkit-box-shadow: 0 0 45px #050505;
 }
 .allowHover .makeMeScrollable div.scrollableArea div img:hover {
 	transition: -webkit-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: -moz-border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 	transition: border-radius 0.3s cubic-bezier(0.33, 0.66, 0.66, 1); 
 
-	-webkit-transition-delay: .1s; -moz-transition-delay: .1s; transition-delay: .1s;
+	transition-delay: .1s;
+	-webkit-transition-delay: .1s; 
+	-moz-transition-delay: .1s; 
 
-	-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
+	border-radius: 25px;
+	-webkit-border-radius: 25px; 
+	-moz-border-radius: 25px; 
 
-    box-shadow: 0 0 45px #050505; -moz-box-shadow: 0 0 45px #050505; -webkit-box-shadow: 0 0 45px #050505;
+    box-shadow: 0 0 45px #050505; 
+    -moz-box-shadow: 0 0 45px #050505; 
+    -webkit-box-shadow: 0 0 45px #050505;
  }
 
-.barefaced div{padding: 0px; margin: 0px;}
+.barefaced div {
+	padding: 0px; margin: 0px;
+}
+
+/*.............................................LOADING.....................................*/
+#loading {
+	position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
+	background-color: rgba(35, 21, 11, 1);
+	margin-left:281px; z-index: 1; 
+	background-image: url('pict/gridGround.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#gradientLoading {
+/*	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	background: -moz-linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
+	background: linear-gradient(-90deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);*/
+	height: 100%;
+  	width: 600px;
+  	float: right;
+  	margin: 0 0 0 0;
+  	background-image: url('pict/gradline.png');
+  	background-repeat-x: no-repeat;
+}
+
+.loadingText {	
+    font: bold 55px Griffy, Serif;
+    text-shadow: -4px 3px 0 #5C411E, -14px 7px 0 rgba(0, 0, 0, 0);
+    cursor: default;
+    color: #CFAC6D;
+  	text-align: center;
+  	position: relative;
+  	padding-top: 15%;
+}
+
+.ContLoad{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#spinner {
+	position: absolute;
+	top:45%; 
+	right:100%; 
+	width: 50px; 
+	z-index: -1;
+
+    -webkit-animation-name: spinner; 
+    -webkit-animation-duration: 8s; 
+    animation-name: spinner;
+    animation-duration: 8s;
+    -webkit-animation-timing-function: linear; 
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes spinner {
+    from {right:100%;}
+    to {right:-5%;}
+}
+@keyframes spinner {
+    from {right:100%;}
+    to {right:-5%;}
+}
 
 /*.............................................FOOTER.....................................*/
 .wave {
@@ -407,11 +439,13 @@ body {
   bottom: 0px;
   left:0px;
   right:0px;
-  height: 36px;
+  height: 26px;
   background-image: url('pict/wave.png');
   background-repeat: repeat-x;
   background-position-y: -1px;
-  /*z-index: 11;*/
+  -webkit-box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+  -moz-box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+  background-color: rgb(31, 18, 3);
 }
 
 /*.waveVertical {
