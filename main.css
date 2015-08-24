@@ -19,7 +19,8 @@ a:visited {
 }
   
 html {
-	width: 100%; height: 100%;
+	width: 100%; 
+	height: 100%;
 	-webkit-user-select: none; 
 	-khtml-user-select: none; 
 	-moz-user-select: none; 
@@ -186,15 +187,21 @@ body {
 /*.............................................GRID.....................................*/
 
 #content {
-	height: 100%; 
+	position: inherit;
+	max-width: 100%;
 	margin-left:281px;
 }
 
 #gridWall, #gridFrames, #gridBottles, #gridOther, #gridContacts, #gridTwine {  
-  	position: relative;
+/*  
+	position: relative;
   	min-height: 100%;
   	margin: 0 auto;
+*/
   	background: rgba(14, 4, 0, 0.43);
+}
+#gridContacts{
+	height: 220px;
 }
 
 .grid {
@@ -447,19 +454,6 @@ body {
   -moz-box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
   background-color: rgb(31, 18, 3);
 }
-
-/*.waveVertical {
-  position: absolute;
-  top:0px;
-  right:0px;
-  bottom:0px;
-  width: 23px;
-  background-image: url('pict/wave-vertical.png');
-  background-repeat: repeat-y; 
-  z-index: 2;
-  display: none;
-}*/
-
 
 /*..................................................................................*/
 button:focus{outline: 0px;}
