@@ -1,0 +1,53 @@
+#leftMenu {		
+	-webkit-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
+	-moz-box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4); 
+	box-shadow: inset -2px 0 7px rgba(0, 0, 0, 0.50), 4px 0 5px rgba(0,0,0,0.4);
+}
+
+.menu a {
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu .activeElement{
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.topic {
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+}
+
+.albumName {
+	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+}
+
+.item img {
+	box-shadow: 0 0 45px #050505; 
+  	-webkit-box-shadow: 0 0 45px #050505; 
+  	-moz-box-shadow: 0 0 45px #050505; 
+}
+
+.makeMeScrollable {
+	box-shadow: 0 0 45px #050505; 
+	-moz-box-shadow: 0 0 45px #050505; 
+	-webkit-box-shadow: 0 0 45px #050505;
+}
+
+.makeMeScrollable div.scrollableArea div img {
+	box-shadow: 0 0 45px #050505; 
+	-moz-box-shadow: 0 0 45px #050505; 
+	-webkit-box-shadow: 0 0 45px #050505;
+}
+
+.wave {
+	box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	-webkit-box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+	-moz-box-shadow: 0px 0px 117px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
+}

@@ -1,4 +1,8 @@
-#loading{margin-left:0px; z-index: 999;background-image:none;}
+#loading{
+	margin-left:0px; 
+	z-index: 999;
+	background-image:none;
+}
 .loadingText{font-size: 50px;}
 
 #leftMenu{display:none;}
@@ -64,4 +68,38 @@
 	-webkit-border-radius: 16px; -moz-border-radius: 16px; border-radius: 16px;
 }
 
-.footBorder{display: none;}
+ #imgCursorTouch {
+ 	background-image: url(pict/cursorTouch.png);
+ 	background-repeat: no-repeat;
+ 	position: absolute;
+ 	top: 90px;
+ 	opacity: 0;
+ 	
+ 	height: 101px;
+ 	width: 93px;
+ 	z-index: 2;
+
+    -webkit-animation: CursorTouch 2.5s;
+    -webkit-animation-delay: 1s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;  
+
+    animation: CursorTouch 2.5s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+ }
+/* Chrome, Safari, Opera */
+@-webkit-keyframes CursorTouch {
+    from {right: -93px;opacity: 0.5;}
+    to {right: 120%;opacity: 1;}
+}
+
+@keyframes CursorTouch {
+    from {right: -93px;opacity: 0.5;}
+    to {right: 120%;opacity: 1;}
+}
+
+.barefaced div {
+	padding: 0px; margin: 0px;
+}
