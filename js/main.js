@@ -226,9 +226,10 @@ $(function(){
         	cursorcolor: "#995303",
         	cursorborder: "1px solid #5F3A1F",
         	cursoropacitymin: "0.3",
-        	cursoropacitymax: "0.8",
+        	cursoropacitymax: "0.9",
         	cursorwidth: "4px",
-        	background: "rgba(39, 23, 3, 0.70)"
+        	background: "rgba(39, 23, 3, 0.70)",
+        	
         });
 });
 

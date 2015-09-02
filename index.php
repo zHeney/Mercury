@@ -52,7 +52,7 @@
 <div id="topMenu">
 <?php 
     $activeElement = true;?>
-  <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">Wall</a></div> 
+  <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">News</a></div> 
   <div class="menu"><a targetGrid="#gridTwine" href="">Twine</a></div>
   <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div> 
   <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>
@@ -66,7 +66,7 @@
                                        <!-- Menu -->
   <div id="info-area">
 <?php $activeElement = true;?>
-    <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">Wall</a></div>
+    <div class="menu"><a class="<?php echo $activeElement?"activeElement":""; ?>" targetGrid="#gridWall" href="">News</a></div>
     <div class="menu"><a targetGrid="#gridTwine" href="">Twine</a></div>
     <div class="menu"><a targetGrid="#gridBottles" href="">Bottles</a></div>
     <div class="menu"><a targetGrid="#gridFrames" href="">Frames</a></div>

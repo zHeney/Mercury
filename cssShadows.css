@@ -10,17 +10,11 @@
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu .activeElement{
+/*.menu .activeElement{
 	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
 	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 0.3), 4px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.topic {
-	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
-	-moz-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
-	box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
-}
+}*/
 
 .albumName {
 	-webkit-box-shadow: inset -2px 0 27px rgba(0, 0, 0, 1), 4px 0 5px rgba(3, 3, 3, 0.66);
