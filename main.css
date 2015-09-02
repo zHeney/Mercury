@@ -10,11 +10,12 @@ a {
     text-decoration: none;
 }
 
-a:link {
+a:link, a:visited {
 	color: #CFAC6D;
 }
-a:visited {
-	color: #CFAC6D;
+
+p {
+	margin: 0;
 }
 
 body, html {
@@ -35,6 +36,7 @@ html {
 body {	
 	min-height: 100%;
 	overflow-x: hidden;
+	overflow-y: hidden;
 	position: relative;
 	background-color: rgb(39, 23, 3);
 	background-image: url('https://lh4.googleusercontent.com/-4EFhm37mR34/UMZP2dR0f9I/AAAAAAAAASw/Dog3ZRVv5Gk/s684/rast31.jpg'); 
@@ -123,7 +125,8 @@ body {
 #leftMenu{
 	background: #271703;
 	position: fixed; z-index: 10; 
-	height: 100%; width:281px; 
+	height: 100%; width:281px;
+	z-index: 7; 
 }
 
 #logo-area {
@@ -187,12 +190,7 @@ body {
 .menu a {
 	text-shadow: 3px 1px 1px rgba(48, 29, 18, 1);
     color: #F4DDB5;
-    opacity: 1;
-    text-decoration: none;
-	text-align: center;
-    -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-    border-radius: 6px;
 	
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -200,26 +198,30 @@ body {
 	-o-transition: all .2s ease;
 	transition: all .2s ease;
  
-	height:31px;
 	cursor:pointer;
+	display:block;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	text-align:center;
+	text-decoration:none;
+	opacity:1;
+	height:31px;
 	overflow:hidden;
 	background-color:rgb(102, 64, 16);
-	display:block;
 } 
 
 .menu a:active {
-	opacity: 0.75;
 
-   -webkit-transform: translate(0, 3px);
 	-moz-transform: translate(0, 3px);
 	transform: translate(0, 3px);
+	-webkit-transform: translate(0, 3px);
 }
 
 .menu .activeElement {
-	pointer-events: none;
 	background: -webkit-linear-gradient(-90deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: -moz-linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
 	background: linear-gradient(180deg, rgba(145, 74, 6, 0.99) 0, rgba(84, 44, 5, 0.99) 100%);
+	pointer-events: none;
 	background-color: #783D05;
 }
 
@@ -295,12 +297,12 @@ body {
 	position: relative; 	
 	height: 27px; width:100%;
 	text-align: center; 
-	z-index: 1;
 
 	font: normal 20px/normal "Griffy", Helvetica, sans-serif;
 	-o-text-overflow: clip;
 	text-overflow: clip;
 	color: rgb(255, 237, 226);
+	z-index: 1;
 }
 
 /*.............................................ITEM.....................................*/
@@ -413,15 +415,16 @@ body {
 
 /*.............................................FOOTER.....................................*/
 .wave {
-  position: absolute;
-  bottom: 0px;
-  left:0px;
-  right:0px;
-  height: 26px;
-  background-image: url('pict/wave.png');
-  background-repeat: repeat-x;
-  background-position-y: -1px;
-  background-color: rgb(31, 18, 3);
+	z-index: 6;
+  	position: absolute;
+  	bottom: 0px;
+  	left:0px;
+  	right:0px;
+  	height: 26px;
+  	background-image: url('pict/wave.png');
+  	background-repeat: repeat-x;
+  	background-position-y: -1px;
+  	background-color: rgb(31, 18, 3);
 }
 
 /*..................................................................................*/

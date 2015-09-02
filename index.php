@@ -28,9 +28,11 @@
     <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css" />
 
     <link async href="http://fonts.googleapis.com/css?family=Griffy" rel="stylesheet" type="text/css"/>
-   
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/main.js"></script>
+    
+
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
 
   </head>
 
@@ -220,7 +222,7 @@
     <div class="ContLoad">
       <div class="contacts">astrummercury@gmail.com 
         <p>
-          <a href="https://www.facebook.com/mercury.astrum" target="_blank">www.facebook.com/mercury.astrum></a>
+          <a href="https://www.facebook.com/mercury.astrum" target="_blank">www.facebook.com/mercury.astrum</a>
         </p>
       </div>
     </div>
@@ -236,6 +238,7 @@
 <script src="js/jquery.kinetic.min.js" type="text/javascript"></script>
 <script src="js/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
 <script src="js/jquery.colorbox-min.js" type="text/javascript"></script>
+
 
 <!-- ...............................GoogleAnalytics...................................... -->
 <script>
