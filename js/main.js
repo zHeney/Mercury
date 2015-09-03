@@ -134,6 +134,9 @@ $(function(){
 
 		if(isMobile == false){
 			var animationTime = 500;
+                        $(".wave").fadeOut(animationTime,function(){
+                            $(".wave").fadeIn(animationTime);
+                        });
 			grid.addClass("absolute").fadeIn(animationTime,function(){
 				grid.addClass("active").removeClass("absolute").removeAttr("style");
 				current.removeClass("active");
