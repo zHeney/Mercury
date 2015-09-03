@@ -1,6 +1,6 @@
 // read more https://developers.google.com/picasa-web/docs/2.0/reference#Parameters
 // possible values 94, 110, 128, 200, 220, 288, 320, 400, 512, 576, 640, 720, 800, 912, 1024, 1152, 1280, 1440, 1600
-var BIG_IMGMAX = 1024;
+var BIG_IMGMAX = 100;
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 //start. NoHoverOnScroll
@@ -30,14 +30,14 @@ function onAllPicturesLoad(callBack){
     	loaded++;
        	console.log("Loaded pictures " + loaded + " out of " + $img.length);
 
-		percentIndicator.html(parseInt(onePercent * loaded) + "%");
+        percentIndicator.html(parseInt(onePercent * loaded) + "%");
         
         if(loaded == $img.length){
             callBack();
         }
     }).each(function() {
         if(this.complete)$(this).load();
-    });  
+    });
 }
 
 function fixWidthOfBareFaced(){
@@ -107,6 +107,8 @@ $(function(){
             scrolled = false;
          },250);
     });
+
+        !isMobile && $("#leftMenu").show();
 
 	$(window).resize(function() {
             screenHelper.checkWindowResize();
@@ -181,19 +183,22 @@ $(function(){
 			var groupClass = "." + $(this).attr("imagegroup");
 			$(groupClass).each(function(){
 				var src = $(this).attr("src");
+                                console.log(src);
 				if(src){
-					var newSrc = src.replace(/(.*\/s)([0-9]+)(.*)/,'$1' + BIG_IMGMAX + '$3');
+					var newSrc = src.replace(/(.*w)([0-9]+)(.*)/,'$1' + BIG_IMGMAX + '$3');
 					$(this).attr("href",newSrc);
+                                        console.log(newSrc);
 				}
 			});
 			colorBoxOptions.rel = groupClass;
 			$(groupClass).colorbox(colorBoxOptions);
 		});
 
-		$(".wall").each(function(){$(this).attr("href",$(this).attr("src"));});
-		colorBoxOptions.rel = ".wall";
-	    $(".wall").colorbox(colorBoxOptions);
-
+		$(".wall").each(function(){
+                    var href = $(this).attr("href");
+                    !href && $(this).attr("href",$(this).attr("src"));
+                });
+		
 	    $(".twine").each(function(){$(this).attr("href",$(this).attr("src"));});
 		colorBoxOptions.rel = ".twine";
 	    $(".twine").colorbox(colorBoxOptions);
@@ -212,6 +217,8 @@ $(function(){
 	}
 
         onAllPicturesLoad(function(){
+            $("#content").show();
+            
             fixWidthOfBareFaced();
             $("body").removeClass("noScroll");
             $("#loading").hide();

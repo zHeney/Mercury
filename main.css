@@ -49,10 +49,10 @@ body {
 
 /*....................................LOADING.....................................*/
 #loading {
-	position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
-	background-color: rgba(35, 21, 11, 1);
-	margin-left:281px; z-index: 1; 
-	background-image: url('pict/gridGround.png');
+    position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
+    background-color: rgba(35, 21, 11, 1);
+    margin-left:281px; z-index: 1; 
+    background-image: url('pict/gridGround.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
