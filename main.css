@@ -48,13 +48,13 @@ body {
 
 
 /*....................................LOADING.....................................*/
-#loading {
-    position: fixed; top:0px; right: 0px; left: 0px; bottom: 0px; 
+#loading { top:0px; right: 0px; left: 0px; bottom: 0px; 
     background-color: rgba(35, 21, 11, 1);
-    margin-left:281px; z-index: 1; 
+    margin-left:281px; z-index: 7; 
     background-image: url('pict/gridGround.png');
     background-repeat: no-repeat;
     background-size: contain;
+    position: fixed;
 }
 #gradientLoading {
 /*	background: -webkit-linear-gradient(-180deg, rgba(13, 7, 1, 1) 0, rgba(35, 21, 11, 1) 100%);
@@ -190,7 +190,6 @@ body {
 .menu a {
 	text-shadow: 3px 1px 1px rgba(48, 29, 18, 1);
     color: #F4DDB5;
-    -moz-border-radius: 6px;
 	
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
@@ -200,8 +199,11 @@ body {
  
 	cursor:pointer;
 	display:block;
+
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	   -moz-border-radius:6px;
+			border-radius:6px;
+
 	text-align:center;
 	text-decoration:none;
 	opacity:1;
@@ -330,9 +332,9 @@ body {
 
 .allowHover .item img:hover {
 	cursor: pointer;
-	border-radius: 30px; 
+	/*border-radius: 30px; 
 	-webkit-border-radius: 30px; 
-	-moz-border-radius: 30px;
+	-moz-border-radius: 30px;*/
 }
 
 /*.............................................HorizontalGallery.....................................*/

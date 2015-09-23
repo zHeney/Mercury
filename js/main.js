@@ -1,6 +1,6 @@
 // read more https://developers.google.com/picasa-web/docs/2.0/reference#Parameters
 // possible values 94, 110, 128, 200, 220, 288, 320, 400, 512, 576, 640, 720, 800, 912, 1024, 1152, 1280, 1440, 1600
-var BIG_IMGMAX = 100;
+var BIG_IMGMAX = 800;
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 //start. NoHoverOnScroll
@@ -188,7 +188,7 @@ $(function(){
 				var src = $(this).attr("src");
                                 console.log(src);
 				if(src){
-					var newSrc = src.replace(/(.*w)([0-9]+)(.*)/,'$1' + BIG_IMGMAX + '$3');
+					var newSrc = src.replace(/(.*h)([0-9]+)(.*)/,'$1' + BIG_IMGMAX + '$3');
 					$(this).attr("href",newSrc);
                                         console.log(newSrc);
 				}
@@ -202,21 +202,25 @@ $(function(){
                     !href && $(this).attr("href",$(this).attr("src"));
                 });
 		
-	    $(".twine").each(function(){$(this).attr("href",$(this).attr("src"));});
-		colorBoxOptions.rel = ".twine";
-	    $(".twine").colorbox(colorBoxOptions);
+		$(".twine").each(function(){
+                    var href = $(this).attr("href");
+                    !href && $(this).attr("href",$(this).attr("src"));
+                });
 
-		$(".bottles").each(function(){$(this).attr("href",$(this).attr("src"));});
-		colorBoxOptions.rel = ".bottles";
-	    $(".bottles").colorbox(colorBoxOptions);
+		$(".bottles").each(function(){
+                    var href = $(this).attr("href");
+                    !href && $(this).attr("href",$(this).attr("src"));
+                });
 
-		$(".frames").each(function(){$(this).attr("href",$(this).attr("src"));});
-		colorBoxOptions.rel = ".frames";
-	    $(".frames").colorbox(colorBoxOptions);
+		$(".frames").each(function(){
+                    var href = $(this).attr("href");
+                    !href && $(this).attr("href",$(this).attr("src"));
+                });
 
-	    $(".other").each(function(){$(this).attr("href",$(this).attr("src"));});
-	    colorBoxOptions.rel = ".other";
-	    $(".other").colorbox(colorBoxOptions);
+		$(".other").each(function(){
+                    var href = $(this).attr("href");
+                    !href && $(this).attr("href",$(this).attr("src"));
+                });
 	}
 
         onAllPicturesLoad(function(){
